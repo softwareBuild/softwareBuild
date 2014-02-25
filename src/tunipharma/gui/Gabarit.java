@@ -1385,7 +1385,7 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelInscriptionInternaute);
+        contenuFixe.add(PanelChercherPharmacie);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnChercherPharmacieActionPerformed
@@ -1539,7 +1539,7 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelAjouterPharmacie);
+        contenuFixe.add(PanelListerActualité);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnListerActualitéActionPerformed
@@ -1550,7 +1550,7 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelListerActualité);
+        contenuFixe.add(PanelAjouterCommentaire);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnAjouterCommActionPerformed
@@ -1561,7 +1561,7 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelAjouterPharmacie);
+        contenuFixe.add(PanelInscriptionEvenement);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnInscriptionEvenementActionPerformed
@@ -1572,7 +1572,7 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelInscriptionEvenement);
+        contenuFixe.add(PanelEnvoyerReclamation);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnEnvoyerReclamationActionPerformed
