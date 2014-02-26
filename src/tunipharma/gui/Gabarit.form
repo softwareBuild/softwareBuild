@@ -725,7 +725,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="634" max="32767" attributes="0"/>
+                          <EmptySpace pref="652" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
                       </Group>
@@ -744,7 +744,7 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="chercher pharmacieeeeeeeeeeeeeeeeeeee"/>
+                    <Property name="text" type="java.lang.String" value="chercher pharmacieeeeeeeeeeeeeeeee"/>
                   </Properties>
                 </Component>
               </SubComponents>

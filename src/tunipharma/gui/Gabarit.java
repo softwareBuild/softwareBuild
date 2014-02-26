@@ -610,14 +610,14 @@ public class Gabarit extends javax.swing.JFrame {
 
         PanelChercherPharmacie.setBackground(new java.awt.Color(255, 153, 153));
 
-        jLabel3.setText("chercher pharmacieeeeeeeeeeeeeeeeeeee");
+        jLabel3.setText("chercher pharmacieeeeeeeeeeeeeeeee");
 
         javax.swing.GroupLayout PanelChercherPharmacieLayout = new javax.swing.GroupLayout(PanelChercherPharmacie);
         PanelChercherPharmacie.setLayout(PanelChercherPharmacieLayout);
         PanelChercherPharmacieLayout.setHorizontalGroup(
             PanelChercherPharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelChercherPharmacieLayout.createSequentialGroup()
-                .addContainerGap(634, Short.MAX_VALUE)
+                .addContainerGap(652, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(315, 315, 315))
         );
