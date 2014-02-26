@@ -5,6 +5,7 @@
 package tunipharma.entities;
 
 import java.sql.Date;
+import java.sql.Time;
 
 /**
  *
@@ -13,9 +14,18 @@ import java.sql.Date;
 public class Reclamation {
    private int idReclamation;
    private String msgReclamation;
-   private Date dateReclamation;
-   private int fkidPatient;
-   private String heureReclamation;
+   private java.sql.Date dateReclamation;
+private java.sql.Time heureReclamation;
+private int fkidPatient;
+
+
+    public Time getHeureReclamation() {
+        return heureReclamation;
+    }
+
+    public void setHeureReclamation(Time heureReclamation) {
+        this.heureReclamation = heureReclamation;
+    }
 
     public int getIdReclamation() {
         return idReclamation;
@@ -49,13 +59,7 @@ public class Reclamation {
         this.fkidPatient = fkidPatient;
     }
 
-    public String getHeureReclamation() {
-        return heureReclamation;
-    }
-
-    public void setHeureReclamation(String heureReclamation) {
-        this.heureReclamation = heureReclamation;
-    }
+  
 
     @Override
     public String toString() {
