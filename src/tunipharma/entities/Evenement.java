@@ -15,10 +15,10 @@ public class Evenement {
    private int idEvent;
    private String libEvent;
   
-   private java.sql.Date dateEvent;
-   private java.sql.Time heureEvent;
+   private Date dateEvent;
+   private Time heureEvent;
    private String lieuEvent;
-private String fklibellePharmacie;
+   private String fklibellePharmacie;
 
     @Override
     public String toString() {

@@ -72,5 +72,10 @@ public class Admin {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
+
+    @Override
+    public String toString() {
+        return "Admin{" + "idAdministrateur=" + idAdministrateur + ", login=" + login + ", pseudo=" + pseudo + ", password=" + password + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + '}';
+    }
    
 }
