@@ -610,14 +610,14 @@ public class Gabarit extends javax.swing.JFrame {
 
         PanelChercherPharmacie.setBackground(new java.awt.Color(255, 153, 153));
 
-        jLabel3.setText("chercher pharmacie");
+        jLabel3.setText("chercher pharmacieeeeeeeeeeeeeeeeeeee");
 
         javax.swing.GroupLayout PanelChercherPharmacieLayout = new javax.swing.GroupLayout(PanelChercherPharmacie);
         PanelChercherPharmacie.setLayout(PanelChercherPharmacieLayout);
         PanelChercherPharmacieLayout.setHorizontalGroup(
             PanelChercherPharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelChercherPharmacieLayout.createSequentialGroup()
-                .addContainerGap(748, Short.MAX_VALUE)
+                .addContainerGap(634, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(315, 315, 315))
         );
@@ -679,14 +679,14 @@ public class Gabarit extends javax.swing.JFrame {
 
         PanelAjouterActualité.setBackground(new java.awt.Color(0, 51, 102));
 
-        jLabel6.setText("ajouterActualité");
+        jLabel6.setText("ajouterActualitéééééééééééééééééééééé");
 
         javax.swing.GroupLayout PanelAjouterActualitéLayout = new javax.swing.GroupLayout(PanelAjouterActualité);
         PanelAjouterActualité.setLayout(PanelAjouterActualitéLayout);
         PanelAjouterActualitéLayout.setHorizontalGroup(
             PanelAjouterActualitéLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAjouterActualitéLayout.createSequentialGroup()
-                .addContainerGap(765, Short.MAX_VALUE)
+                .addContainerGap(639, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(315, 315, 315))
         );
