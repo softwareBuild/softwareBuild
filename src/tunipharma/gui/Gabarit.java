@@ -1,3 +1,4 @@
+package tunipharma.GUI;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -14,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Gabarit extends javax.swing.JFrame {
 
     /**
-     * Creates new form Gabarit
+     *
      */
     public Gabarit() {
         initComponents();
