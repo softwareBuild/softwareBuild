@@ -17,7 +17,7 @@ public class testFindIdPatient {
     Patient patient = new Patient();
     PatientDAO patientDAO = new PatientDAO();
     patient = patientDAO.findPatientById(3);
-    System.out.println(patient);
+        System.out.println(patient);
     
     }  
 }

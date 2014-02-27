@@ -23,7 +23,6 @@ public class PatientModel extends AbstractTableModel {
     
     public PatientModel(){
         patients = new PatientDAO().DisplayAllPatient();
-        //patients = new PatientDAO().DisplayAllPatientByAdresse("aaaa");
     }
             
     public int getRowCount() {
