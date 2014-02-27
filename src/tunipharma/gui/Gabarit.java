@@ -7,6 +7,7 @@ package tunipharma.GUI;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import tunipharma.models.PatientModel;
 
 /**
  *
@@ -19,12 +20,15 @@ public class Gabarit extends javax.swing.JFrame {
      */
     public Gabarit() {
         initComponents();
+       
         Toolkit tool=Toolkit.getDefaultToolkit();
         Dimension dim = new Dimension(tool.getScreenSize());
         int height =(int) dim.getHeight();
         int width =(int) dim.getWidth();
         setSize(width,height);
         setLocation((width / 2) - getWidth()/2, (height / 2) - getHeight()/2);
+        TableGestionPatient.setModel(new PatientModel());
+
     }
 
     /**
@@ -110,6 +114,8 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         PanelGererPatient = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TableGestionPatient = new javax.swing.JTable();
         PanelGererPharmacie = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         PanelGererService = new javax.swing.JPanel();
@@ -896,25 +902,45 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelModifierCompte, "card2");
 
-        PanelGererPatient.setBackground(new java.awt.Color(0, 51, 102));
+        PanelGererPatient.setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel18.setText("gerer patient");
+        jLabel18.setText("Gérer Patient");
+
+        TableGestionPatient.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(TableGestionPatient);
 
         javax.swing.GroupLayout PanelGererPatientLayout = new javax.swing.GroupLayout(PanelGererPatient);
         PanelGererPatient.setLayout(PanelGererPatientLayout);
         PanelGererPatientLayout.setHorizontalGroup(
             PanelGererPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGererPatientLayout.createSequentialGroup()
-                .addContainerGap(779, Short.MAX_VALUE)
-                .addComponent(jLabel18)
-                .addGap(315, 315, 315))
+            .addGroup(PanelGererPatientLayout.createSequentialGroup()
+                .addGroup(PanelGererPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelGererPatientLayout.createSequentialGroup()
+                        .addGap(360, 360, 360)
+                        .addComponent(jLabel18))
+                    .addGroup(PanelGererPatientLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
         PanelGererPatientLayout.setVerticalGroup(
             PanelGererPatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelGererPatientLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel18)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererPatient, "card2");
@@ -1671,6 +1697,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel PanelModifierProfil;
     private javax.swing.JPanel PanelNoterService;
     private javax.swing.JPanel PanelTotal;
+    private javax.swing.JTable TableGestionPatient;
     private javax.swing.JPanel contenuFixe;
     private javax.swing.JPanel footer;
     private javax.swing.JButton jButton2;
@@ -1708,6 +1735,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanelActualite;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel logo;

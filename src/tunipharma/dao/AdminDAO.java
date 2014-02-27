@@ -5,8 +5,12 @@
 package tunipharma.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import tunipharma.entities.Admin;
+import tunipharma.entities.Reclamation;
 import tunipharma.util.MyConnection;
 
 /**
@@ -32,5 +36,33 @@ public class AdminDAO {
             System.out.println("erreur lors de la mise à jour " + ex.getMessage());
         }
     }
+               public java.util.List<Admin> DisplayInfoAdmin() {
+
+
+        java.util.List<Admin> admins = new ArrayList<Admin>();
+
+      String requete = "select * from administrateur";
+        try {
+            Statement statement = MyConnection.getInstance().createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+
+            while (resultat.next()) {
+                Admin admin = new Admin();
+                admin.setLogin(resultat.getString(1));
+                admin.setPassword(resultat.getString(2));
+                
+                admins.add(admin);
+            }
+                        System.out.println("info admin  affiche");
+
+            return admins;
+            
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des depots " + ex.getMessage());
+            return null;
+        }
+    }
+
      
 }
