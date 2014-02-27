@@ -927,7 +927,7 @@ public class Gabarit extends javax.swing.JFrame {
 
         PanelGererPatient.setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel18.setText("Gérer Patient");
+        jLabel18.setText("Gérer Patientt");
 
         TableGestionPatient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1048,7 +1048,7 @@ public class Gabarit extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jButton5)
                         .addGap(18, 18, 18)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGererPatientLayout.createSequentialGroup()
