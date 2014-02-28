@@ -15,8 +15,8 @@ public class Reclamation {
    private int idReclamation;
    private String msgReclamation;
    private java.sql.Date dateReclamation;
-private java.sql.Time heureReclamation;
-private int fkidPatient;
+   private java.sql.Time heureReclamation;
+   private int fkidPatient;
 
 
     public Time getHeureReclamation() {

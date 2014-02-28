@@ -30,6 +30,7 @@ public class AdminDAO {
         }
     }
     
+    //zayedddd
     public java.util.List<Admin> DisplayInfoAdmin() {
 
 
@@ -57,9 +58,6 @@ public class AdminDAO {
             return null;
         }
     }
-    
-    
-    
     
     public Admin findAdminById(int idAdmin){
     Admin admin = new Admin();

@@ -14,7 +14,6 @@ import java.sql.Time;
 public class Evenement {
    private int idEvent;
    private String libEvent;
-  
    private Date dateEvent;
    private Time heureEvent;
    private String lieuEvent;

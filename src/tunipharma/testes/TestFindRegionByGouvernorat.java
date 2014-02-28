@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import tunipharma.dao.RegionDAO;
 import tunipharma.entities.Region;
+import tunipharma.services.RegionService;
 
 /**
  *
@@ -16,9 +17,10 @@ import tunipharma.entities.Region;
 public class TestFindRegionByGouvernorat {
       public static void main(String[] args) { 
           Region region =new Region();
-          RegionDAO regionDAO =new RegionDAO();          
+          RegionDAO regionDAO =new RegionDAO();  
+          RegionService regionService = new RegionService();
           List<Region> regions= new ArrayList<Region>();
-          regions=regionDAO.DisplayAllRegionGouver(2);
+          regions=regionService.DisplayAllRegionGouver(2);
             for (int i = 0; i < regions.size(); i++) {
          System.out.println(regions.get(i).toString()); 
       }

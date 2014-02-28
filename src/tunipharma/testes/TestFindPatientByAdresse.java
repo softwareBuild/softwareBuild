@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import tunipharma.dao.PatientDAO;
 import tunipharma.entities.Patient;
+import tunipharma.services.PatientService;
 
 /**
  *
@@ -19,8 +20,9 @@ public class TestFindPatientByAdresse {
     
     Patient patient = new Patient();
     PatientDAO patientDAO = new PatientDAO();
+    PatientService patientService = new PatientService();
     List<Patient> patients = new ArrayList<Patient>();
-    patients = patientDAO.DisplayAllPatientByAdresse("La Manouba");
+    patients = patientService.DisplayAllPatientByAdresse("La Manouba");
        
       for (int i = 0; i < patients.size(); i++) {
          System.out.println(patients.get(i).toString()); 

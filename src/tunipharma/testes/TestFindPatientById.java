@@ -6,6 +6,7 @@ package tunipharma.testes;
 
 import tunipharma.dao.PatientDAO;
 import tunipharma.entities.Patient;
+import tunipharma.services.PatientService;
 
 /**
  *
@@ -16,7 +17,8 @@ public class TestFindPatientById {
     
     Patient patient = new Patient();
     PatientDAO patientDAO = new PatientDAO();
-    patient = patientDAO.findPatientById(3);
+    PatientService patientService = new PatientService();
+    patient = patientService.findPatientById(3);
     System.out.println(patient);
     
     }  

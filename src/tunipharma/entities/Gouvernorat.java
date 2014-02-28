@@ -12,15 +12,12 @@ import java.util.List;
  * @author wael.boumaiza
  */
 
-public class Gouvernrat {
+public class Gouvernorat {
     
     private int idG;
     private String libG;
     
-
-    public Gouvernrat() {
-       // List<Region> listeRegion = new ArrayList<Region>();
-    }
+    public Gouvernorat() {}
 
     public int getIdG() {
         return idG;

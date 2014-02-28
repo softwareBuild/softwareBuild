@@ -12,7 +12,6 @@ public class Region {
     
     private int idG;
     private String libREgion;
-//    Grouverment grouverment;
     
     public Region() {
     }

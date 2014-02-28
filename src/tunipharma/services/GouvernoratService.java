@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tunipharma.dao;
+package tunipharma.services;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,8 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import tunipharma.entities.Gouvernrat;
-import tunipharma.entities.Patient;
+import tunipharma.entities.Gouvernorat;
 import tunipharma.entities.Region;
 import tunipharma.util.MyConnection;
 
@@ -19,61 +18,11 @@ import tunipharma.util.MyConnection;
  *
  * @author wael.boumaiza
  */
-public class GouvernratDAO {
+public class GouvernoratService {
     
-  public void insertGrouverment(Gouvernrat grouverment){
-
-        String requete = "insert into Grouverment () values (?,?,?,?,?)";
-        try {
-            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            /*
-            ps.setString(1, p.getLogin());
-            ps.setString(2, p.getPassword());
-            ps.setString(3, p.getNom() );
-            ps.setString(4, p.getPrenom() );
-            ps.setString(5, p.getAdresse() );
-            
-            */
-            ps.executeUpdate();
-            System.out.println("Ajout effectuée avec succès");
-        } catch (SQLException ex) {
-           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors de l'insertion "+ex.getMessage());
-        }
-    }
-  
-  public List<Gouvernrat> DisplayAllGrouverment (){
-
-        List<Gouvernrat> listeGrouverments = new ArrayList<Gouvernrat>();
-
-        String requete = "select * from gouvernorat";
-        try {
-           Statement statement = MyConnection.getInstance()
-                   .createStatement();
-            ResultSet resultat = statement.executeQuery(requete);
-
-            while(resultat.next()){
-                Gouvernrat grouverment =new Gouvernrat();
-                
-                grouverment.setIdG(resultat.getInt(1));
-                grouverment.setLibG(resultat.getString(2));
-                listeGrouverments.add(grouverment);
-            }
-            return listeGrouverments;
-        } catch (SQLException ex) {
-           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors du chargement des ps "+ex.getMessage());
-            return null;
-        }
-    }
-   
-   
-   
-   
-   
-    public List<Gouvernrat> DisplayAllRegionGouver (int idGouve){
-        Gouvernrat grouverment = new Gouvernrat();
-        List<Gouvernrat> listeGrouverments = new ArrayList<Gouvernrat>();
+    public List<Gouvernorat> DisplayAllRegionGouver (int idGouve){
+        Gouvernorat grouverment = new Gouvernorat();
+        List<Gouvernorat> listeGrouverments = new ArrayList<Gouvernorat>();
 
         String requete = "select * from region where idG= " + idGouve;
         try {
@@ -94,8 +43,8 @@ public class GouvernratDAO {
         }
     }
     
-    public Gouvernrat findGrouvermentById(int id){
-    Gouvernrat grouverment = new Gouvernrat();
+    public Gouvernorat findGrouvermentById(int id){
+    Gouvernorat grouverment = new Gouvernorat();
      String requete = "select * from gouvernorat where idG=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
@@ -116,8 +65,8 @@ public class GouvernratDAO {
         }
     }
     
-    public Gouvernrat findGrouvermentByLib(String lib){
-    Gouvernrat grouverment = new Gouvernrat();
+    public Gouvernorat findGrouvermentByLib(String lib){
+    Gouvernorat grouverment = new Gouvernorat();
      String requete = "select * from gouvernorat where libG=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);

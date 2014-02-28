@@ -4,8 +4,9 @@
  */
 package tunipharma.testes;
 
-import tunipharma.dao.GouvernratDAO;
-import tunipharma.entities.Gouvernrat;
+import tunipharma.dao.GouvernoratDAO;
+import tunipharma.entities.Gouvernorat;
+import tunipharma.services.GouvernoratService;
 
 /**
  *
@@ -14,10 +15,10 @@ import tunipharma.entities.Gouvernrat;
 public class TestFindPharmcieByLibGouver {
     public static void main(String[] args) { 
     
-      Gouvernrat grouverment = new Gouvernrat();
-      GouvernratDAO grouvermentDAO = new GouvernratDAO();
-      //grouverment = grouvermentDAO.findGrouvermentByLib("La Manouba");
-      grouverment = grouvermentDAO.findGrouvermentByLib("Ariana");
+      Gouvernorat grouverment = new Gouvernorat();
+      GouvernoratDAO grouvermentDAO = new GouvernoratDAO();
+      GouvernoratService gouvernratService = new GouvernoratService(); 
+      grouverment = gouvernratService.findGrouvermentByLib("Ariana");
       System.out.println(grouverment);
     
     } 

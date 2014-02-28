@@ -9,14 +9,16 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import tunipharma.dao.GouvernratDAO;
+import tunipharma.dao.GouvernoratDAO;
 import tunipharma.dao.PharmacieDAO;
 import tunipharma.dao.RegionDAO;
-import tunipharma.entities.Gouvernrat;
+import tunipharma.entities.Gouvernorat;
 import tunipharma.entities.Pharmacie;
 import tunipharma.entities.Region;
 import tunipharma.models.PatientModel;
+import tunipharma.services.GouvernoratService;
 import tunipharma.services.PharmacieService;
+import tunipharma.services.RegionService;
 
 /**
  *
@@ -2119,9 +2121,9 @@ public class Gabarit extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        GouvernratDAO grouvermentDAO  = new GouvernratDAO();
-        List<Gouvernrat> grouverments = grouvermentDAO .DisplayAllGrouverment();
-        for (Gouvernrat grouverment : grouverments) 
+        GouvernoratDAO grouvermentDAO  = new GouvernoratDAO();
+        List<Gouvernorat> grouverments = grouvermentDAO .DisplayAllGrouverment();
+        for (Gouvernorat grouverment : grouverments) 
         {
             comboBoxGouvernorat.addItem(grouverment.getLibG().toString());
             comboBoxListerGouvernoratInterNoter.addItem(grouverment.getLibG().toString());
@@ -2132,15 +2134,17 @@ public class Gabarit extends javax.swing.JFrame {
 
     private void comboBoxGouvernoratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxGouvernoratActionPerformed
         
-        GouvernratDAO grouvermentDAO  = new GouvernratDAO();
-        Gouvernrat g =  grouvermentDAO.findGrouvermentByLib(
+        GouvernoratDAO grouvermentDAO  = new GouvernoratDAO();
+        GouvernoratService gouvernratService = new GouvernoratService(); 
+        Gouvernorat g =  gouvernratService.findGrouvermentByLib(
         comboBoxGouvernorat.getSelectedItem().toString());
         labelIdGouverneratInterfaceCherchePharmcie.setText(String.valueOf(g.getIdG()));
         
         //Liste region
         comboBoxRegion.removeAllItems();
         RegionDAO regionDAO=new  RegionDAO();
-        List<Region> regions=regionDAO.DisplayAllRegionGouver( Integer.parseInt(labelIdGouverneratInterfaceCherchePharmcie.getText().toString()) ); 
+        RegionService regionService = new RegionService();
+        List<Region> regions=regionService.DisplayAllRegionGouver( Integer.parseInt(labelIdGouverneratInterfaceCherchePharmcie.getText().toString()) ); 
         for (Region region : regions) {
         comboBoxRegion.addItem(region.getLibREgion());}  
         
@@ -2148,15 +2152,17 @@ public class Gabarit extends javax.swing.JFrame {
 
     private void comboBoxListerGouvernoratInterNoterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListerGouvernoratInterNoterActionPerformed
         
-        GouvernratDAO grouvermentDAO  = new GouvernratDAO();
-        Gouvernrat g =  grouvermentDAO.findGrouvermentByLib(
+        GouvernoratDAO grouvermentDAO  = new GouvernoratDAO();
+        GouvernoratService gouvernratService = new GouvernoratService(); 
+        Gouvernorat g =  gouvernratService.findGrouvermentByLib(
         comboBoxListerGouvernoratInterNoter.getSelectedItem().toString());
         labelIdGouvernaratInterfacheNoterService.setText(String.valueOf(g.getIdG()));
         
         //Liste region
        comboBoxListeRegionInterfaceNoter.removeAllItems();
         RegionDAO regionDAO=new  RegionDAO();
-        List<Region> regions=regionDAO.DisplayAllRegionGouver( Integer.parseInt(labelIdGouvernaratInterfacheNoterService.getText().toString()) ); 
+        RegionService regionService = new RegionService();
+        List<Region> regions=regionService.DisplayAllRegionGouver( Integer.parseInt(labelIdGouvernaratInterfacheNoterService.getText().toString()) ); 
         for (Region region : regions) {
         comboBoxListeRegionInterfaceNoter.addItem(region.getLibREgion());}  
         

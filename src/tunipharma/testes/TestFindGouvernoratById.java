@@ -4,8 +4,9 @@
  */
 package tunipharma.testes;
 
-import tunipharma.dao.GouvernratDAO;
-import tunipharma.entities.Gouvernrat;
+import tunipharma.dao.GouvernoratDAO;
+import tunipharma.entities.Gouvernorat;
+import tunipharma.services.GouvernoratService;
 
 /**
  *
@@ -14,9 +15,10 @@ import tunipharma.entities.Gouvernrat;
 public class TestFindGouvernoratById {
     public static void main(String[] args) { 
     
-      Gouvernrat grouverment = new Gouvernrat();
-      GouvernratDAO grouvermentDAO = new GouvernratDAO();
-      grouverment = grouvermentDAO.findGrouvermentById(1);
+      Gouvernorat grouverment = new Gouvernorat();
+      GouvernoratDAO grouvermentDAO = new GouvernoratDAO();
+      GouvernoratService gouvernratService = new GouvernoratService(); 
+      grouverment = gouvernratService.findGrouvermentById(1);
       System.out.println(grouverment);
     
     }  
