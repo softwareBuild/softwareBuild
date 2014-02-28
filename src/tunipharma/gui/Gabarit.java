@@ -113,6 +113,12 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         PanelAjouterCommentaire = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        comboBoxListeActualtieInterfaceAddComentaire = new javax.swing.JComboBox();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        listbuttonCommentaireInterfaceAddComentaire = new javax.swing.JList();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        textAreaCommentaireInterfaceAddComentaire = new javax.swing.JTextArea();
+        buttonAjouterCommentaireInterfaceAddComentaire = new javax.swing.JButton();
         PanelCréerEvenement = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         PanelModifierProfil = new javax.swing.JPanel();
@@ -906,25 +912,48 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelAjouterActualité, "card2");
 
-        PanelAjouterCommentaire.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel9.setText("Ajouter Commentaire");
 
-        jLabel9.setText("AjouterCommentaire");
+        jScrollPane10.setViewportView(listbuttonCommentaireInterfaceAddComentaire);
+
+        textAreaCommentaireInterfaceAddComentaire.setColumns(20);
+        textAreaCommentaireInterfaceAddComentaire.setRows(5);
+        jScrollPane11.setViewportView(textAreaCommentaireInterfaceAddComentaire);
+
+        buttonAjouterCommentaireInterfaceAddComentaire.setText("Ajouter");
 
         javax.swing.GroupLayout PanelAjouterCommentaireLayout = new javax.swing.GroupLayout(PanelAjouterCommentaire);
         PanelAjouterCommentaire.setLayout(PanelAjouterCommentaireLayout);
         PanelAjouterCommentaireLayout.setHorizontalGroup(
             PanelAjouterCommentaireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAjouterCommentaireLayout.createSequentialGroup()
-                .addContainerGap(743, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addGap(315, 315, 315))
+                .addGap(348, 348, 348))
+            .addGroup(PanelAjouterCommentaireLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addGroup(PanelAjouterCommentaireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonAjouterCommentaireInterfaceAddComentaire)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxListeActualtieInterfaceAddComentaire, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         PanelAjouterCommentaireLayout.setVerticalGroup(
             PanelAjouterCommentaireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAjouterCommentaireLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel9)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(comboBoxListeActualtieInterfaceAddComentaire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonAjouterCommentaireInterfaceAddComentaire)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterCommentaire, "card2");
@@ -2094,6 +2123,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel PanelNoterService;
     private javax.swing.JPanel PanelTotal;
     private javax.swing.JTable TableGestionPatient;
+    private javax.swing.JButton buttonAjouterCommentaireInterfaceAddComentaire;
     private javax.swing.JButton buttonEnvoyerReclamtion;
     private javax.swing.JButton buttonModfierProfilIntercaeProfil;
     private javax.swing.JButton buttonNoterService;
@@ -2101,6 +2131,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
     private javax.swing.JCheckBox checkBoxPharmcieDeGarde;
     private javax.swing.JComboBox comboBoxGouvernorat;
+    private javax.swing.JComboBox comboBoxListeActualtieInterfaceAddComentaire;
     private javax.swing.JComboBox comboBoxListePharmcieInterNoterService;
     private javax.swing.JComboBox comboBoxListeRegionInterfaceNoter;
     private javax.swing.JComboBox comboBoxListerGouvernoratInterNoter;
@@ -2149,6 +2180,8 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelActualite;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2169,6 +2202,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel labelPasswordInterModfierCompte;
     private javax.swing.JLabel labelPhamrcieInterNoter;
     private javax.swing.JLabel labelRegionInteNoter;
+    private javax.swing.JList listbuttonCommentaireInterfaceAddComentaire;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel menu1Internaute;
     private javax.swing.JPanel menu2Pharmacie;
@@ -2180,6 +2214,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTable tableListePharmcieGarde;
     private javax.swing.JTable tableListePharmcieParRegion;
     private javax.swing.JTable tableListePharmcieTypeJourNuit;
+    private javax.swing.JTextArea textAreaCommentaireInterfaceAddComentaire;
     private javax.swing.JTextArea textAreaMessageReclamtionAdd;
     private javax.swing.JTextField textFieldAdresseInterModfierCompte;
     private javax.swing.JTextField textFieldLibellePharmcieRecherche;
