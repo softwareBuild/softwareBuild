@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package tunipharma.service;
+package tunipharma.services;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
