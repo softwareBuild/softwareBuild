@@ -54,7 +54,6 @@ public class Gabarit extends javax.swing.JFrame {
         BtnAjouterCommentaire = new javax.swing.JButton();
         BtnCréerEvenement = new javax.swing.JButton();
         BtnModifierProfil = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         menu3Patient = new javax.swing.JPanel();
         BtnChercherPharmacie = new javax.swing.JButton();
         BtnNoterService = new javax.swing.JButton();
@@ -118,6 +117,16 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         PanelModifierProfil = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        labelLoginInterModfierCompte = new javax.swing.JLabel();
+        labelPasswordInterModfierCompte = new javax.swing.JLabel();
+        labelNomInterModfierCompte = new javax.swing.JLabel();
+        labePrenomInterModfierCompte = new javax.swing.JLabel();
+        labeAdresseInterModfierCompte = new javax.swing.JLabel();
+        textFieldLoginInterModfierCompte = new javax.swing.JTextField();
+        textFieldPassWordInterModfierCompte = new javax.swing.JTextField();
+        textFieldNomInterModfierCompte = new javax.swing.JTextField();
+        textFieldPrenomInterModfierCompte = new javax.swing.JTextField();
+        textFieldAdresseInterModfierCompte = new javax.swing.JTextField();
         PanelInscriptionInternaute = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         PanelNoterService = new javax.swing.JPanel();
@@ -237,7 +246,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 463, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(62, 62, 62))
         );
@@ -288,48 +297,36 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("menu pharmacie");
-
         javax.swing.GroupLayout menu2PharmacieLayout = new javax.swing.GroupLayout(menu2Pharmacie);
         menu2Pharmacie.setLayout(menu2PharmacieLayout);
         menu2PharmacieLayout.setHorizontalGroup(
             menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menu2PharmacieLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addGroup(menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu2PharmacieLayout.createSequentialGroup()
-                        .addGroup(menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnAjouterPharmacie)
-                            .addGroup(menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(BtnAjouterCommentaire, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(BtnCréerEvenement, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(BtnModifierProfil, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BtnAjouterService)
-                                    .addComponent(BtnAjouterActualité))))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu2PharmacieLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(48, 48, 48))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu2PharmacieLayout.createSequentialGroup()
+                .addGroup(menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnModifierProfil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAjouterPharmacie, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAjouterService, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAjouterActualité, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAjouterCommentaire, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                    .addComponent(BtnCréerEvenement, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         menu2PharmacieLayout.setVerticalGroup(
             menu2PharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu2PharmacieLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(22, 22, 22)
                 .addComponent(BtnAjouterPharmacie)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnAjouterService)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnAjouterActualité)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnAjouterCommentaire)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnCréerEvenement)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnModifierProfil)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(79, 79, 79))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu2Pharmacie, "card2");
@@ -417,7 +414,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(BtnEnvoyerReclamation)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnModifierCompte)
-                .addContainerGap(279, Short.MAX_VALUE))
+                .addContainerGap(353, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu3Patient, "card2");
@@ -564,7 +561,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(BtnGererProfil)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel31)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu4Administrateur, "card2");
@@ -823,7 +820,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(comboBoxRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelChercherPharmacie, "card2");
@@ -846,7 +843,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterPharmacieLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel4)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterPharmacie, "card2");
@@ -869,7 +866,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel5)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterService, "card2");
@@ -892,7 +889,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterActualitéLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel6)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterActualité, "card2");
@@ -915,7 +912,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterCommentaireLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel9)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterCommentaire, "card2");
@@ -938,30 +935,76 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelCréerEvenementLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel10)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelCréerEvenement, "card2");
 
-        PanelModifierProfil.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel11.setText("Modifier Profil");
 
-        jLabel11.setText("modifier Profil");
+        labelLoginInterModfierCompte.setText("Login");
+
+        labelPasswordInterModfierCompte.setText("PassWord");
+
+        labelNomInterModfierCompte.setText("Nom ");
+
+        labePrenomInterModfierCompte.setText("Prénom");
+
+        labeAdresseInterModfierCompte.setText("Adresse");
 
         javax.swing.GroupLayout PanelModifierProfilLayout = new javax.swing.GroupLayout(PanelModifierProfil);
         PanelModifierProfil.setLayout(PanelModifierProfilLayout);
         PanelModifierProfilLayout.setHorizontalGroup(
             PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelModifierProfilLayout.createSequentialGroup()
-                .addContainerGap(777, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(315, 315, 315))
+            .addGroup(PanelModifierProfilLayout.createSequentialGroup()
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelModifierProfilLayout.createSequentialGroup()
+                        .addGap(421, 421, 421)
+                        .addComponent(jLabel11))
+                    .addGroup(PanelModifierProfilLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelLoginInterModfierCompte)
+                            .addComponent(labelPasswordInterModfierCompte)
+                            .addComponent(labelNomInterModfierCompte)
+                            .addComponent(labePrenomInterModfierCompte)
+                            .addComponent(labeAdresseInterModfierCompte))
+                        .addGap(37, 37, 37)
+                        .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textFieldLoginInterModfierCompte)
+                            .addComponent(textFieldPassWordInterModfierCompte)
+                            .addComponent(textFieldNomInterModfierCompte)
+                            .addComponent(textFieldPrenomInterModfierCompte)
+                            .addComponent(textFieldAdresseInterModfierCompte, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE))))
+                .addContainerGap(453, Short.MAX_VALUE))
         );
         PanelModifierProfilLayout.setVerticalGroup(
             PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelModifierProfilLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel11)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelLoginInterModfierCompte)
+                    .addComponent(textFieldLoginInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPasswordInterModfierCompte)
+                    .addComponent(textFieldPassWordInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNomInterModfierCompte)
+                    .addComponent(textFieldNomInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labePrenomInterModfierCompte)
+                    .addComponent(textFieldPrenomInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labeAdresseInterModfierCompte)
+                    .addComponent(textFieldAdresseInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelModifierProfil, "card2");
@@ -984,7 +1027,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelInscriptionInternauteLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel12)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelInscriptionInternaute, "card2");
@@ -1087,7 +1130,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelListerActualitéLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel14)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelListerActualité, "card2");
@@ -1139,7 +1182,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonSinscri)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelInscriptionEvenement, "card2");
@@ -1194,7 +1237,7 @@ public class Gabarit extends javax.swing.JFrame {
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonEnvoyerReclamtion)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelEnvoyerReclamation, "card2");
@@ -1217,7 +1260,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelModifierCompteLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel17)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelModifierCompte, "card2");
@@ -1260,7 +1303,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererPatient, "card2");
@@ -1283,7 +1326,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererPharmacieLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel19)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererPharmacie, "card2");
@@ -1306,7 +1349,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel20)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererService, "card2");
@@ -1329,7 +1372,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererNoteServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel21)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererNoteService, "card2");
@@ -1352,7 +1395,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelListePharmacieAValiderLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel22)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelListePharmacieAValider, "card2");
@@ -1375,7 +1418,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererNewsletterLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel23)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererNewsletter, "card2");
@@ -1398,7 +1441,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererActualitéLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel24)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererActualité, "card2");
@@ -1421,7 +1464,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererCommentaireLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel25)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererCommentaire, "card2");
@@ -1444,7 +1487,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGérerReclamationLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel26)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGérerReclamation, "card2");
@@ -1467,7 +1510,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGenererStatistiqueLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel27)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGenererStatistique, "card2");
@@ -1490,7 +1533,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererEvenementLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel28)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererEvenement, "card2");
@@ -1513,7 +1556,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererProfilLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel29)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererProfil, "card2");
@@ -1715,7 +1758,8 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelModifierProfil);
+        //contenuFixe.add(PanelModifierProfil);
+        contenuFixe.add(PanelModifierCompte);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnModifierProfilActionPerformed
@@ -1924,7 +1968,8 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.repaint();
         contenuFixe.revalidate();
         //adding panels
-        contenuFixe.add(PanelModifierCompte);
+        //contenuFixe.add(PanelModifierCompte);
+        contenuFixe.add(PanelModifierProfil);
          contenuFixe.repaint();
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnModifierCompteActionPerformed
@@ -2044,7 +2089,6 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -2083,7 +2127,12 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel labeAdresseInterModfierCompte;
+    private javax.swing.JLabel labePrenomInterModfierCompte;
     private javax.swing.JLabel labelGouvernoratInterNoter;
+    private javax.swing.JLabel labelLoginInterModfierCompte;
+    private javax.swing.JLabel labelNomInterModfierCompte;
+    private javax.swing.JLabel labelPasswordInterModfierCompte;
     private javax.swing.JLabel labelPhamrcieInterNoter;
     private javax.swing.JLabel labelRegionInteNoter;
     private javax.swing.JPanel logo;
@@ -2098,7 +2147,12 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTable tableListePharmcieParRegion;
     private javax.swing.JTable tableListePharmcieTypeJourNuit;
     private javax.swing.JTextArea textAreaMessageReclamtionAdd;
+    private javax.swing.JTextField textFieldAdresseInterModfierCompte;
     private javax.swing.JTextField textFieldLibellePharmcieRecherche;
+    private javax.swing.JTextField textFieldLoginInterModfierCompte;
+    private javax.swing.JTextField textFieldNomInterModfierCompte;
+    private javax.swing.JTextField textFieldPassWordInterModfierCompte;
+    private javax.swing.JTextField textFieldPrenomInterModfierCompte;
     private javax.swing.JTextField textFieldTitrereclamtionAdd;
     // End of variables declaration//GEN-END:variables
 }
