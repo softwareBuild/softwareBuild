@@ -10,12 +10,14 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import tunipharma.dao.ActualiteDAO;
 import tunipharma.dao.EvenementDAO;
 import tunipharma.dao.GouvernoratDAO;
 import tunipharma.dao.PatientDAO;
 import tunipharma.dao.ReclamationDAO;
 //import tunipharma.dao.PharmacieDAO;
 import tunipharma.dao.RegionDAO;
+import tunipharma.entities.Actualites;
 import tunipharma.entities.Evenement;
 import tunipharma.entities.Gouvernorat;
 import tunipharma.entities.Pharmacie;
@@ -2144,7 +2146,15 @@ public class Gabarit extends javax.swing.JFrame {
             comboBoxListerGouvernoratInterNoter.addItem(grouverment.getLibG().toString());
         }
         //liste actualtié 
-        //listActualiterInterfaceListeCommentaire
+        
+        List<Actualites> actualites = new ArrayList<Actualites>();
+        ActualiteDAO actualiteDAO = new ActualiteDAO();
+        actualites = actualiteDAO.DisplayAllActualites();
+        
+        for (Actualites actualite : actualites) {
+           // listActualiterInterfaceListeCommentaire.setModel(actualite);
+            comboBoxListeActualtieInterfaceAddComentaire.addItem(actualite.getLibelleActualite().toString());
+        }
         
         
         //inscript evenemtn
