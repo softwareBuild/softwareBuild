@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package services;
+package tunipahrma.service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
