@@ -150,7 +150,7 @@ public class Gabarit extends javax.swing.JFrame {
         PanelListerActualité = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        listActualiterInterfaceListeCommentaire = new javax.swing.JList();
         PanelInscriptionEvenement = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -1163,12 +1163,12 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel14.setText("Liste Actualite");
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        listActualiterInterfaceListeCommentaire.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane9.setViewportView(jList1);
+        jScrollPane9.setViewportView(listActualiterInterfaceListeCommentaire);
 
         javax.swing.GroupLayout PanelListerActualitéLayout = new javax.swing.GroupLayout(PanelListerActualité);
         PanelListerActualité.setLayout(PanelListerActualitéLayout);
@@ -2173,7 +2173,6 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -2202,6 +2201,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel labelPasswordInterModfierCompte;
     private javax.swing.JLabel labelPhamrcieInterNoter;
     private javax.swing.JLabel labelRegionInteNoter;
+    private javax.swing.JList listActualiterInterfaceListeCommentaire;
     private javax.swing.JList listbuttonCommentaireInterfaceAddComentaire;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel menu1Internaute;
