@@ -129,7 +129,8 @@ public class DaoReclamation {
             return null;
         }
     }
-        public void updateReclamations(Reclamation rec){
+        
+                    public void updateReclamations(Reclamation rec){
         String requete = "update reclamation set msgReclamation=?,dateReclamation=?,heureReclamation=? where idReclamation=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);

@@ -17,8 +17,9 @@ public class TestUpdateReclamation {
          public static void main(String[] args) {
      Reclamation reclamation = new Reclamation();
     DaoReclamation reclamationDAO = new DaoReclamation();
-    reclamation=reclamationDAO.findReclamationById(1);
+    reclamation=reclamationDAO.findReclamationById(2);
     reclamation.setMsgReclamation("hh");
+    
 //    Date d=new Date(2014-1900,1,12);    // Date d = new Date( année -1900 , mois apartir du 0 : 0=>janvier , jour)
 //    reclamation.setDateReclamation(d);         
 //    reclamation.setFkidPatient(1);

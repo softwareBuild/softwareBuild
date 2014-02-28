@@ -185,6 +185,9 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         PanelListePharmacieAValider = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tableLisePharmceiInterfaceListePharmcieAvalider = new javax.swing.JTable();
+        buttonValiderPharmcieInterfacePharmcieAValider = new javax.swing.JButton();
         PanelGererNewsletter = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         PanelGererActualité = new javax.swing.JPanel();
@@ -209,10 +212,6 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
-        PanelTotal.setBackground(new java.awt.Color(204, 255, 204));
-
-        logo.setBackground(new java.awt.Color(0, 255, 204));
-
         javax.swing.GroupLayout logoLayout = new javax.swing.GroupLayout(logo);
         logo.setLayout(logoLayout);
         logoLayout.setHorizontalGroup(
@@ -226,8 +225,6 @@ public class Gabarit extends javax.swing.JFrame {
 
         menuGauche.setBackground(new java.awt.Color(102, 102, 0));
         menuGauche.setLayout(new java.awt.CardLayout());
-
-        menu1Internaute.setBackground(new java.awt.Color(255, 51, 51));
 
         jButton2.setText("Inscription");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -596,8 +593,6 @@ public class Gabarit extends javax.swing.JFrame {
 
         menuGauche.add(menu4Administrateur, "card2");
 
-        Connexion.setBackground(new java.awt.Color(255, 255, 204));
-
         ButtonCnx.setText("Connexion");
         ButtonCnx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -655,8 +650,6 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.setBackground(new java.awt.Color(255, 204, 204));
         contenuFixe.setLayout(new java.awt.CardLayout());
-
-        PanelChercherPharmacie.setBackground(new java.awt.Color(255, 153, 153));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel3.setText("Chercher pharmacie");
@@ -1424,25 +1417,24 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelGererPharmacie, "card2");
 
-        PanelGererService.setBackground(new java.awt.Color(0, 51, 102));
-
-        jLabel20.setText("gerer service");
+        jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel20.setText("Gerer service pharmcie");
 
         javax.swing.GroupLayout PanelGererServiceLayout = new javax.swing.GroupLayout(PanelGererService);
         PanelGererService.setLayout(PanelGererServiceLayout);
         PanelGererServiceLayout.setHorizontalGroup(
             PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGererServiceLayout.createSequentialGroup()
-                .addContainerGap(779, Short.MAX_VALUE)
+                .addContainerGap(378, Short.MAX_VALUE)
                 .addComponent(jLabel20)
-                .addGap(315, 315, 315))
+                .addGap(338, 338, 338))
         );
         PanelGererServiceLayout.setVerticalGroup(
             PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelGererServiceLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel20)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(547, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererService, "card2");
@@ -1470,25 +1462,50 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelGererNoteService, "card2");
 
-        PanelListePharmacieAValider.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel22.setText("Liste pharmacie à valider");
 
-        jLabel22.setText("liste pharmacie a valider");
+        tableLisePharmceiInterfaceListePharmcieAvalider.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane12.setViewportView(tableLisePharmceiInterfaceListePharmcieAvalider);
+
+        buttonValiderPharmcieInterfacePharmcieAValider.setText("Valider");
 
         javax.swing.GroupLayout PanelListePharmacieAValiderLayout = new javax.swing.GroupLayout(PanelListePharmacieAValider);
         PanelListePharmacieAValider.setLayout(PanelListePharmacieAValiderLayout);
         PanelListePharmacieAValiderLayout.setHorizontalGroup(
             PanelListePharmacieAValiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelListePharmacieAValiderLayout.createSequentialGroup()
-                .addContainerGap(727, Short.MAX_VALUE)
-                .addComponent(jLabel22)
-                .addGap(315, 315, 315))
+            .addGroup(PanelListePharmacieAValiderLayout.createSequentialGroup()
+                .addGroup(PanelListePharmacieAValiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelListePharmacieAValiderLayout.createSequentialGroup()
+                        .addGap(331, 331, 331)
+                        .addComponent(jLabel22)
+                        .addGap(149, 340, Short.MAX_VALUE))
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelListePharmacieAValiderLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(buttonValiderPharmcieInterfacePharmcieAValider)))
+                .addContainerGap())
         );
         PanelListePharmacieAValiderLayout.setVerticalGroup(
             PanelListePharmacieAValiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelListePharmacieAValiderLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel22)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonValiderPharmcieInterfacePharmcieAValider)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelListePharmacieAValider, "card2");
@@ -1667,8 +1684,6 @@ public class Gabarit extends javax.swing.JFrame {
             .addGap(0, 56, Short.MAX_VALUE)
         );
 
-        jPanelActualite.setBackground(new java.awt.Color(255, 0, 255));
-
         javax.swing.GroupLayout jPanelActualiteLayout = new javax.swing.GroupLayout(jPanelActualite);
         jPanelActualite.setLayout(jPanelActualiteLayout);
         jPanelActualiteLayout.setHorizontalGroup(
@@ -1706,7 +1721,7 @@ public class Gabarit extends javax.swing.JFrame {
                     .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contenuFixe, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(contenuFixe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuGauche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2206,6 +2221,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JButton buttonModfierProfilIntercaeProfil;
     private javax.swing.JButton buttonNoterService;
     private javax.swing.JButton buttonSinscri;
+    private javax.swing.JButton buttonValiderPharmcieInterfacePharmcieAValider;
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
     private javax.swing.JCheckBox checkBoxPharmcieDeGarde;
     private javax.swing.JComboBox comboBoxGouvernorat;
@@ -2259,6 +2275,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2289,6 +2306,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel menu3Patient;
     private javax.swing.JPanel menu4Administrateur;
     private javax.swing.JPanel menuGauche;
+    private javax.swing.JTable tableLisePharmceiInterfaceListePharmcieAvalider;
     private javax.swing.JTable tableListPharmcieLibelle;
     private javax.swing.JTable tableListeEvent;
     private javax.swing.JTable tableListePharmcieGarde;
