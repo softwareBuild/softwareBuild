@@ -63,7 +63,6 @@ public class Gabarit extends javax.swing.JFrame {
         BtnInscriptionEvenement = new javax.swing.JButton();
         BtnEnvoyerReclamation = new javax.swing.JButton();
         BtnModifierCompte = new javax.swing.JButton();
-        jLabel30 = new javax.swing.JLabel();
         menu4Administrateur = new javax.swing.JPanel();
         BtnGererPatient = new javax.swing.JButton();
         BtnGererPharmacie = new javax.swing.JButton();
@@ -229,7 +228,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(62, 62, 62))
         );
@@ -319,7 +318,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(BtnCréerEvenement)
                 .addGap(18, 18, 18)
                 .addComponent(BtnModifierProfil)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(79, 79, 79))
         );
@@ -377,49 +376,39 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
-        jLabel30.setText("menu patient");
-
         javax.swing.GroupLayout menu3PatientLayout = new javax.swing.GroupLayout(menu3Patient);
         menu3Patient.setLayout(menu3PatientLayout);
         menu3PatientLayout.setHorizontalGroup(
             menu3PatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu3PatientLayout.createSequentialGroup()
                 .addGroup(menu3PatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menu3PatientLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(menu3PatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnChercherPharmacie)
-                            .addComponent(BtnNoterService)
-                            .addComponent(BtnListerActualité)
-                            .addComponent(BtnAjouterComm)
-                            .addComponent(BtnInscriptionEvenement)
-                            .addComponent(BtnEnvoyerReclamation)
-                            .addComponent(BtnModifierCompte)))
-                    .addGroup(menu3PatientLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel30)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(BtnChercherPharmacie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnNoterService, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnListerActualité, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAjouterComm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnInscriptionEvenement, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                    .addComponent(BtnEnvoyerReclamation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnModifierCompte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         menu3PatientLayout.setVerticalGroup(
             menu3PatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu3PatientLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(BtnChercherPharmacie)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnNoterService)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnListerActualité)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnAjouterComm)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnInscriptionEvenement)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnEnvoyerReclamation)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnModifierCompte)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addComponent(jLabel30)
-                .addGap(66, 66, 66))
+                .addContainerGap(279, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu3Patient, "card2");
@@ -566,7 +555,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(BtnGererProfil)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel31)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu4Administrateur, "card2");
@@ -825,7 +814,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(comboBoxRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelChercherPharmacie, "card2");
@@ -848,7 +837,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterPharmacieLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel4)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterPharmacie, "card2");
@@ -871,7 +860,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel5)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterService, "card2");
@@ -894,7 +883,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterActualitéLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel6)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterActualité, "card2");
@@ -917,7 +906,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelAjouterCommentaireLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel9)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelAjouterCommentaire, "card2");
@@ -940,7 +929,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelCréerEvenementLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel10)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelCréerEvenement, "card2");
@@ -963,7 +952,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelModifierProfilLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel11)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelModifierProfil, "card2");
@@ -986,7 +975,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelInscriptionInternauteLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel12)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelInscriptionInternaute, "card2");
@@ -1009,7 +998,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelNoterServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel13)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelNoterService, "card2");
@@ -1032,7 +1021,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelListerActualitéLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel14)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelListerActualité, "card2");
@@ -1139,7 +1128,7 @@ public class Gabarit extends javax.swing.JFrame {
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonEnvoyerReclamtion)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelEnvoyerReclamation, "card2");
@@ -1162,7 +1151,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelModifierCompteLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel17)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelModifierCompte, "card2");
@@ -1205,7 +1194,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererPatient, "card2");
@@ -1228,7 +1217,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererPharmacieLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel19)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererPharmacie, "card2");
@@ -1251,7 +1240,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel20)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererService, "card2");
@@ -1274,7 +1263,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererNoteServiceLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel21)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererNoteService, "card2");
@@ -1297,7 +1286,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelListePharmacieAValiderLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel22)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelListePharmacieAValider, "card2");
@@ -1320,7 +1309,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererNewsletterLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel23)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererNewsletter, "card2");
@@ -1343,7 +1332,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererActualitéLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel24)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererActualité, "card2");
@@ -1366,7 +1355,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererCommentaireLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel25)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererCommentaire, "card2");
@@ -1389,7 +1378,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGérerReclamationLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel26)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGérerReclamation, "card2");
@@ -1412,7 +1401,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGenererStatistiqueLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel27)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGenererStatistique, "card2");
@@ -1435,7 +1424,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererEvenementLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel28)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererEvenement, "card2");
@@ -1458,7 +1447,7 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(PanelGererProfilLayout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jLabel29)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererProfil, "card2");
@@ -1997,7 +1986,6 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
