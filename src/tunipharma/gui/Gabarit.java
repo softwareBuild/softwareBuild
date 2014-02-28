@@ -153,6 +153,7 @@ public class Gabarit extends javax.swing.JFrame {
         labelRegionInteNoter = new javax.swing.JLabel();
         labelPhamrcieInterNoter = new javax.swing.JLabel();
         buttonNoterService = new javax.swing.JButton();
+        labelIdGouvernaratInterfacheNoterService = new javax.swing.JLabel();
         PanelListerActualité = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -1104,6 +1105,12 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel13.setText("Noter Service pharmcie");
 
+        comboBoxListerGouvernoratInterNoter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxListerGouvernoratInterNoterActionPerformed(evt);
+            }
+        });
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1125,6 +1132,8 @@ public class Gabarit extends javax.swing.JFrame {
 
         buttonNoterService.setText("Noter Servicie");
 
+        labelIdGouvernaratInterfacheNoterService.setText("jLabel2");
+
         javax.swing.GroupLayout PanelNoterServiceLayout = new javax.swing.GroupLayout(PanelNoterService);
         PanelNoterService.setLayout(PanelNoterServiceLayout);
         PanelNoterServiceLayout.setHorizontalGroup(
@@ -1140,6 +1149,8 @@ public class Gabarit extends javax.swing.JFrame {
                     .addComponent(comboBoxListerGouvernoratInterNoter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(comboBoxListeRegionInterfaceNoter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(comboBoxListePharmcieInterNoterService, 0, 446, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelIdGouvernaratInterfacheNoterService)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNoterServiceLayout.createSequentialGroup()
                 .addContainerGap()
@@ -1163,7 +1174,8 @@ public class Gabarit extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxListerGouvernoratInterNoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelGouvernoratInterNoter))
+                    .addComponent(labelGouvernoratInterNoter)
+                    .addComponent(labelIdGouvernaratInterfacheNoterService))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxListeRegionInterfaceNoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1694,7 +1706,7 @@ public class Gabarit extends javax.swing.JFrame {
                     .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contenuFixe, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(contenuFixe, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(menuGauche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2084,6 +2096,22 @@ public class Gabarit extends javax.swing.JFrame {
         
     }//GEN-LAST:event_comboBoxGouvernoratActionPerformed
 
+    private void comboBoxListerGouvernoratInterNoterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListerGouvernoratInterNoterActionPerformed
+        
+        GouvernratDAO grouvermentDAO  = new GouvernratDAO();
+        Gouvernrat g =  grouvermentDAO.findGrouvermentByLib(
+        comboBoxListerGouvernoratInterNoter.getSelectedItem().toString());
+        labelIdGouvernaratInterfacheNoterService.setText(String.valueOf(g.getIdG()));
+        
+        //Liste region
+       comboBoxListeRegionInterfaceNoter.removeAllItems();
+        RegionDAO regionDAO=new  RegionDAO();
+        List<Region> regions=regionDAO.DisplayAllRegionGouver( Integer.parseInt(labelIdGouvernaratInterfacheNoterService.getText().toString()) ); 
+        for (Region region : regions) {
+        comboBoxListeRegionInterfaceNoter.addItem(region.getLibREgion());}  
+        
+    }//GEN-LAST:event_comboBoxListerGouvernoratInterNoterActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2246,6 +2274,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel labeAdresseInterModfierCompte;
     private javax.swing.JLabel labePrenomInterModfierCompte;
     private javax.swing.JLabel labelGouvernoratInterNoter;
+    private javax.swing.JLabel labelIdGouvernaratInterfacheNoterService;
     private java.awt.Label labelIdGouverneratInterfaceCherchePharmcie;
     private javax.swing.JLabel labelLoginInterModfierCompte;
     private javax.swing.JLabel labelNomInterModfierCompte;
