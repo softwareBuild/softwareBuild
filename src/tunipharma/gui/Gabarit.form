@@ -1225,30 +1225,35 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="421" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="labelLoginInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labelPasswordInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labelNomInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labePrenomInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labeAdresseInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="textFieldLoginInterModfierCompte" max="32767" attributes="0"/>
-                                      <Component id="textFieldPassWordInterModfierCompte" max="32767" attributes="0"/>
-                                      <Component id="textFieldNomInterModfierCompte" max="32767" attributes="0"/>
-                                      <Component id="textFieldPrenomInterModfierCompte" max="32767" attributes="0"/>
-                                      <Component id="textFieldAdresseInterModfierCompte" pref="353" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="buttonModfierProfilIntercaeProfil" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labelLoginInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelPasswordInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelNomInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labePrenomInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labeAdresseInterModfierCompte" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="textFieldLoginInterModfierCompte" max="32767" attributes="0"/>
+                                              <Component id="textFieldPassWordInterModfierCompte" max="32767" attributes="0"/>
+                                              <Component id="textFieldNomInterModfierCompte" max="32767" attributes="0"/>
+                                              <Component id="textFieldPrenomInterModfierCompte" max="32767" attributes="0"/>
+                                              <Component id="textFieldAdresseInterModfierCompte" min="-2" pref="353" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="453" max="32767" attributes="0"/>
+                          <EmptySpace pref="391" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1257,7 +1262,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelLoginInterModfierCompte" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="textFieldLoginInterModfierCompte" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1282,7 +1287,9 @@
                               <Component id="labeAdresseInterModfierCompte" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="textFieldAdresseInterModfierCompte" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="309" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="buttonModfierProfilIntercaeProfil" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="214" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1330,6 +1337,11 @@
                 <Component class="javax.swing.JTextField" name="textFieldPrenomInterModfierCompte">
                 </Component>
                 <Component class="javax.swing.JTextField" name="textFieldAdresseInterModfierCompte">
+                </Component>
+                <Component class="javax.swing.JButton" name="buttonModfierProfilIntercaeProfil">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Modifier"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

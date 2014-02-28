@@ -127,6 +127,7 @@ public class Gabarit extends javax.swing.JFrame {
         textFieldNomInterModfierCompte = new javax.swing.JTextField();
         textFieldPrenomInterModfierCompte = new javax.swing.JTextField();
         textFieldAdresseInterModfierCompte = new javax.swing.JTextField();
+        buttonModfierProfilIntercaeProfil = new javax.swing.JButton();
         PanelInscriptionInternaute = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         PanelNoterService = new javax.swing.JPanel();
@@ -953,6 +954,8 @@ public class Gabarit extends javax.swing.JFrame {
 
         labeAdresseInterModfierCompte.setText("Adresse");
 
+        buttonModfierProfilIntercaeProfil.setText("Modifier");
+
         javax.swing.GroupLayout PanelModifierProfilLayout = new javax.swing.GroupLayout(PanelModifierProfil);
         PanelModifierProfil.setLayout(PanelModifierProfilLayout);
         PanelModifierProfilLayout.setHorizontalGroup(
@@ -963,28 +966,31 @@ public class Gabarit extends javax.swing.JFrame {
                         .addGap(421, 421, 421)
                         .addComponent(jLabel11))
                     .addGroup(PanelModifierProfilLayout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelLoginInterModfierCompte)
-                            .addComponent(labelPasswordInterModfierCompte)
-                            .addComponent(labelNomInterModfierCompte)
-                            .addComponent(labePrenomInterModfierCompte)
-                            .addComponent(labeAdresseInterModfierCompte))
-                        .addGap(37, 37, 37)
-                        .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textFieldLoginInterModfierCompte)
-                            .addComponent(textFieldPassWordInterModfierCompte)
-                            .addComponent(textFieldNomInterModfierCompte)
-                            .addComponent(textFieldPrenomInterModfierCompte)
-                            .addComponent(textFieldAdresseInterModfierCompte, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE))))
-                .addContainerGap(453, Short.MAX_VALUE))
+                        .addGap(328, 328, 328)
+                        .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonModfierProfilIntercaeProfil)
+                            .addGroup(PanelModifierProfilLayout.createSequentialGroup()
+                                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelLoginInterModfierCompte)
+                                    .addComponent(labelPasswordInterModfierCompte)
+                                    .addComponent(labelNomInterModfierCompte)
+                                    .addComponent(labePrenomInterModfierCompte)
+                                    .addComponent(labeAdresseInterModfierCompte))
+                                .addGap(37, 37, 37)
+                                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textFieldLoginInterModfierCompte)
+                                    .addComponent(textFieldPassWordInterModfierCompte)
+                                    .addComponent(textFieldNomInterModfierCompte)
+                                    .addComponent(textFieldPrenomInterModfierCompte)
+                                    .addComponent(textFieldAdresseInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         PanelModifierProfilLayout.setVerticalGroup(
             PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelModifierProfilLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11)
-                .addGap(62, 62, 62)
+                .addGap(116, 116, 116)
                 .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelLoginInterModfierCompte)
                     .addComponent(textFieldLoginInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1004,7 +1010,9 @@ public class Gabarit extends javax.swing.JFrame {
                 .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labeAdresseInterModfierCompte)
                     .addComponent(textFieldAdresseInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(buttonModfierProfilIntercaeProfil)
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelModifierProfil, "card2");
@@ -2064,6 +2072,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel PanelTotal;
     private javax.swing.JTable TableGestionPatient;
     private javax.swing.JButton buttonEnvoyerReclamtion;
+    private javax.swing.JButton buttonModfierProfilIntercaeProfil;
     private javax.swing.JButton buttonNoterService;
     private javax.swing.JButton buttonSinscri;
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
