@@ -143,6 +143,8 @@ public class Gabarit extends javax.swing.JFrame {
         buttonNoterService = new javax.swing.JButton();
         PanelListerActualité = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         PanelInscriptionEvenement = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -1129,25 +1131,37 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelNoterService, "card2");
 
-        PanelListerActualité.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel14.setText("Liste Actualite");
 
-        jLabel14.setText("listrer Actualite");
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane9.setViewportView(jList1);
 
         javax.swing.GroupLayout PanelListerActualitéLayout = new javax.swing.GroupLayout(PanelListerActualité);
         PanelListerActualité.setLayout(PanelListerActualitéLayout);
         PanelListerActualitéLayout.setHorizontalGroup(
             PanelListerActualitéLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelListerActualitéLayout.createSequentialGroup()
-                .addContainerGap(770, Short.MAX_VALUE)
+                .addContainerGap(459, Short.MAX_VALUE)
                 .addComponent(jLabel14)
-                .addGap(315, 315, 315))
+                .addGap(421, 421, 421))
+            .addGroup(PanelListerActualitéLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane9)
+                .addContainerGap())
         );
         PanelListerActualitéLayout.setVerticalGroup(
             PanelListerActualitéLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelListerActualitéLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel14)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelListerActualité, "card2");
@@ -2128,6 +2142,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -2141,6 +2156,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
