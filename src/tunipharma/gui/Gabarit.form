@@ -402,28 +402,44 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BtnGererPatient" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererPharmacie" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererService" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererNoteService" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnListePharmacieAValide" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererNewsletter" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererActualité" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererCommentaire" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererReclamation" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererStatistique" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererEvenemenet" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="BtnGererProfil" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="BtnGererService" min="-2" pref="151" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="BtnGererNoteService" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="BtnListePharmacieAValide" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererPatient" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererPharmacie" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererNewsletter" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererActualité" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererCommentaire" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererReclamation" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererStatistique" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererEvenemenet" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BtnGererProfil" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -432,29 +448,29 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="BtnGererPatient" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererPharmacie" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererService" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererNoteService" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnListePharmacieAValide" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererNewsletter" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererActualité" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererCommentaire" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererReclamation" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererStatistique" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererEvenemenet" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnGererProfil" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                           <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="97" max="32767" attributes="0"/>
                       </Group>
