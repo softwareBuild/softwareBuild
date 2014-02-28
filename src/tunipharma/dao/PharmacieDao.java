@@ -234,6 +234,32 @@ public class PharmacieDao {
         }
     }
       
+        public List<Pharmacie> DisplayAllPharmcieByRegion(String region, int a,int b,int c){
+
+        List<Pharmacie> listePharmacies = new ArrayList<Pharmacie>();
+
+        String requete = "select * from Pharmacie where RegionPh='" + region +"'";
+        try {
+            Statement statement = MyConnection.getInstance().createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+            while(resultat.next()){
+                Pharmacie pharmacie =new Pharmacie();
+                pharmacie.setPhLibelle(resultat.getString(1));
+                pharmacie.setPhRaisonSocial(resultat.getString(2));
+                pharmacie.setPhMatriculeFiscale(resultat.getInt(3));
+                pharmacie.setPhRegistre(resultat.getString(4));
+                pharmacie.setPhAdresse(resultat.getString(5));
+                pharmacie.setTypePharmacie(resultat.getString(6));
+                pharmacie.setGarde(resultat.getInt(7));
+                listePharmacies.add(pharmacie);
+            }
+            return listePharmacies;
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des ps "+ex.getMessage());
+            return null;
+        }
+    }
       
      
 }
