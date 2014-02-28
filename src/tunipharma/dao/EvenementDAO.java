@@ -20,6 +20,7 @@ import tunipharma.util.MyConnection;
  * @author omar
  */
 public class EvenementDAO {
+    
     public void insertEvenements(Evenement e){
 
         String requete = "insert into evenements (libEvent,dateEvent,heureEvent,lieuEvent,fklibellePharmacie) values (?,?,?,?,?)";
@@ -37,8 +38,7 @@ public class EvenementDAO {
         }
     }
     
-        
-        public void updateEvenements(Evenement e){
+    public void updateEvenements(Evenement e){
         String requete = "update evenements set libEvent=?,dateEvent=?,heureEvent=?,lieuEvent=? where idEvent=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
@@ -55,7 +55,7 @@ public class EvenementDAO {
         }
     }
            
-         public void deleteEvenement( String  FklibellePharmacie){
+    public void deleteEvenement( String  FklibellePharmacie){
         String requete = "delete from evenements  where fklibellePharmacie=?" ;
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
@@ -68,7 +68,8 @@ public class EvenementDAO {
         }
        
     }
-        public List<Evenement> DisplayAllEvenement (){
+    
+    public List<Evenement> DisplayAllEvenement (){
 
         List<Evenement> listeEvenements = new ArrayList<Evenement>();
 
@@ -97,9 +98,11 @@ public class EvenementDAO {
             return null;
         }
     }
+    
+    
+    
         
-        
-             public List<Evenement> DisplayAllEvenementByLibelle(String libelle){ 
+    public List<Evenement> DisplayAllEvenementByLibelle(String libelle){ 
 
         List<Evenement> listeEvenements = new ArrayList<Evenement>();
 
@@ -127,7 +130,7 @@ public class EvenementDAO {
         }
     }
 
- public Evenement findEvenementById(int idEvenement){
+    public Evenement findEvenementById(int idEvenement){
     Evenement event = new Evenement();
      String requete = "select * from evenements where idEvent =?";
         try {

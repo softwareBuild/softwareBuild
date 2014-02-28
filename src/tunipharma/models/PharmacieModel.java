@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import tunipharma.dao.PatientDAO;
-import tunipharma.dao.PharmacieDao;
+import tunipharma.dao.PharmacieDAO;
 import tunipharma.entities.Patient;
 import tunipharma.entities.Pharmacie;
 
@@ -22,23 +22,23 @@ public class PharmacieModel extends AbstractTableModel {
     String[] entete = {"Id","Login","Password","Nom","Prenom","Adresse","000"};
     
     public PharmacieModel(){
-        pharmacies = new PharmacieDao().DisplayAllPharmacie();
+        pharmacies = new PharmacieDAO().DisplayAllPharmacie();
        }
 
     public PharmacieModel(String lib) {
-       pharmacies = new PharmacieDao().DisplayAllPharmacieByLibelle(lib);  
+       pharmacies = new PharmacieDAO().DisplayAllPharmacieByLibelle(lib);  
     }
 
     public PharmacieModel(int garde) {
-        pharmacies = new PharmacieDao().DisplayAllPharmacieGarde(garde);
+        pharmacies = new PharmacieDAO().DisplayAllPharmacieGarde(garde);
     }
 
     public PharmacieModel(String type,int a) {
-        pharmacies = new PharmacieDao().DisplayAllPharmacieNuit(type,0);
+        pharmacies = new PharmacieDAO().DisplayAllPharmacieNuit(type,0);
     }
     
     public PharmacieModel(String adr,int a,int b) {
-        pharmacies = new PharmacieDao().DisplayAllByAdresse(adr, a, b);
+        pharmacies = new PharmacieDAO().DisplayAllByAdresse(adr, a, b);
     }
     
             

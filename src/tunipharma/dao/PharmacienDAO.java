@@ -71,7 +71,9 @@ public class PharmacienDAO {
         }
     }
       
-         public void deletePharmacien( int IdPharmacien){
+        
+        
+        public void deletePharmacien( int IdPharmacien){
         String requete = "delete from pharmacien  where idPharmacien=?" ;
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package tunipharma.models;
-import tunipharma.dao.DaoReclamation;
+import tunipharma.dao.ReclamationDAO;
 import tunipharma.entities.Reclamation;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class ReclamationModel extends AbstractTableModel {
     String[] entete = {"idReclamation", "msgReclamation", "dateReclamation", "fkidPatient","heureReclamation"};
 
     public ReclamationModel() {
-        reclamations = new DaoReclamation().DisplayAllReclamations();
+        reclamations = new ReclamationDAO().DisplayAllReclamations();
     }
 
     public int getRowCount() {

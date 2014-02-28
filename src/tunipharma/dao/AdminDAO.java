@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tunipharma.dao;
 
 import java.sql.PreparedStatement;
@@ -13,12 +9,9 @@ import tunipharma.entities.Admin;
 import tunipharma.entities.Reclamation;
 import tunipharma.util.MyConnection;
 
-/**
- *
- * @author omar
- */
 public class AdminDAO {
-       public void updateAdministrateur(Admin ad) {
+       
+    public void updateAdministrateur(Admin ad) {
         String requete = "update administrateur set login=?,password=?,nom=?,prenom=?,adresse=? where idAdministrateur=?";
 
         try {
@@ -36,33 +29,8 @@ public class AdminDAO {
             System.out.println("erreur lors de la mise à jour " + ex.getMessage());
         }
     }
-       //findReclamationById c'est pour tester la methode update admin
-            public Admin findAdminById(int idAdmin){
-    Admin admin = new Admin();
-     String requete = "select * from administrateur where idAdministrateur =?";
-        try {
-            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setInt(1, idAdmin);
-            ResultSet resultat = ps.executeQuery();
-            while (resultat.next())
-            {
-                admin.setIdAdministrateur(resultat.getInt(1));
-                admin.setLogin(resultat.getString(2));
-                admin.setPassword(resultat.getString(3));
-                admin.setNom(resultat.getString(4));
-                admin.setPrenom(resultat.getString(5));
-                admin.setAdresse(resultat.getString(6));
-
-            }
-            return admin;
-
-        } catch (SQLException ex) {
-            System.out.println("erreur lors de la recherche de la note "+ex.getMessage());
-            return null;
-        }
-    }  
-       
-               public java.util.List<Admin> DisplayInfoAdmin() {
+    
+    public java.util.List<Admin> DisplayInfoAdmin() {
 
 
         java.util.List<Admin> admins = new ArrayList<Admin>();
@@ -89,6 +57,36 @@ public class AdminDAO {
             return null;
         }
     }
+    
+    
+    
+    
+    public Admin findAdminById(int idAdmin){
+    Admin admin = new Admin();
+     String requete = "select * from administrateur where idAdministrateur =?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, idAdmin);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                admin.setIdAdministrateur(resultat.getInt(1));
+                admin.setLogin(resultat.getString(2));
+                admin.setPassword(resultat.getString(3));
+                admin.setNom(resultat.getString(4));
+                admin.setPrenom(resultat.getString(5));
+                admin.setAdresse(resultat.getString(6));
+
+            }
+            return admin;
+
+        } catch (SQLException ex) {
+            System.out.println("erreur lors de la recherche de la note "+ex.getMessage());
+            return null;
+        }
+    }  
+       
+    
 
      
 }

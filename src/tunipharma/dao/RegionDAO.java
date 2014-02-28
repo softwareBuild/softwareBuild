@@ -39,7 +39,7 @@ public class RegionDAO {
         }
     }
 
-      public List<Region> DisplayAllRegion (){
+    public List<Region> DisplayAllRegion (){
 
 
         List<Region> listeRegion = new ArrayList<Region>();
@@ -63,7 +63,11 @@ public class RegionDAO {
         }
     }
       
- public List<Region> DisplayAllRegionGouver (int idGouve){
+    
+    
+    
+    
+    public List<Region> DisplayAllRegionGouver (int idGouve){
       //  Region region = new Region();
         List<Region> listeRegions = new ArrayList<Region>();
 
@@ -86,8 +90,7 @@ public class RegionDAO {
         }
     }
  
- 
-     public Region findRegionById(int id){
+    public Region findRegionById(int id){
     Region region = new Region();
      String requete = "select * from region where idRegion=?";
         try {

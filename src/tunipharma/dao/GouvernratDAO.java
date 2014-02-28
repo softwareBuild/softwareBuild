@@ -21,7 +21,7 @@ import tunipharma.util.MyConnection;
  */
 public class GouvernratDAO {
     
-    public void insertGrouverment(Gouvernrat grouverment){
+  public void insertGrouverment(Gouvernrat grouverment){
 
         String requete = "insert into Grouverment () values (?,?,?,?,?)";
         try {
@@ -41,8 +41,8 @@ public class GouvernratDAO {
             System.out.println("erreur lors de l'insertion "+ex.getMessage());
         }
     }
-    
-   public List<Gouvernrat> DisplayAllGrouverment (){
+  
+  public List<Gouvernrat> DisplayAllGrouverment (){
 
         List<Gouvernrat> listeGrouverments = new ArrayList<Gouvernrat>();
 
@@ -68,7 +68,10 @@ public class GouvernratDAO {
     }
    
    
-   public List<Gouvernrat> DisplayAllRegionGouver (int idGouve){
+   
+   
+   
+    public List<Gouvernrat> DisplayAllRegionGouver (int idGouve){
         Gouvernrat grouverment = new Gouvernrat();
         List<Gouvernrat> listeGrouverments = new ArrayList<Gouvernrat>();
 
@@ -90,8 +93,7 @@ public class GouvernratDAO {
             return null;
         }
     }
-   
-   
+    
     public Gouvernrat findGrouvermentById(int id){
     Gouvernrat grouverment = new Gouvernrat();
      String requete = "select * from gouvernorat where idG=?";

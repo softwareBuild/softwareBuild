@@ -6,13 +6,17 @@ package tunipharma.GUI;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import tunipharma.dao.GouvernratDAO;
+import tunipharma.dao.PharmacieDAO;
 import tunipharma.dao.RegionDAO;
 import tunipharma.entities.Gouvernrat;
+import tunipharma.entities.Pharmacie;
 import tunipharma.entities.Region;
 import tunipharma.models.PatientModel;
+import tunipharma.services.PharmacieService;
 
 /**
  *
@@ -51,7 +55,6 @@ public class Gabarit extends javax.swing.JFrame {
         menu1Internaute = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         menu2Pharmacie = new javax.swing.JPanel();
         BtnAjouterPharmacie = new javax.swing.JButton();
         BtnAjouterService = new javax.swing.JButton();
@@ -80,7 +83,6 @@ public class Gabarit extends javax.swing.JFrame {
         BtnGererStatistique = new javax.swing.JButton();
         BtnGererEvenemenet = new javax.swing.JButton();
         BtnGererProfil = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
         Connexion = new javax.swing.JPanel();
         ButtonCnx = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
@@ -181,6 +183,13 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         PanelGererService = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        labelLibelleIntefaGererPharmcie = new javax.swing.JLabel();
+        textFieldSupprimerIntefaGererPharmcie = new javax.swing.JTextField();
+        comboBoxListePharmcieIntefaGererServicePharmcie = new javax.swing.JComboBox();
+        labelPharmcieIntefaGererPharmcie = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        tableSupprimerIntefaGererPharmcie = new javax.swing.JTable();
+        buttonSupprimerIntefaGererPharmcie = new javax.swing.JButton();
         PanelGererNoteService = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         PanelListePharmacieAValider = new javax.swing.JPanel();
@@ -240,22 +249,16 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("menu Internaute");
-
         javax.swing.GroupLayout menu1InternauteLayout = new javax.swing.GroupLayout(menu1Internaute);
         menu1Internaute.setLayout(menu1InternauteLayout);
         menu1InternauteLayout.setHorizontalGroup(
             menu1InternauteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu1InternauteLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(58, 58, 58))
             .addGroup(menu1InternauteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menu1InternauteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         menu1InternauteLayout.setVerticalGroup(
             menu1InternauteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,9 +267,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 463, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(62, 62, 62))
+                .addContainerGap(539, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu1Internaute, "card2");
@@ -437,8 +438,6 @@ public class Gabarit extends javax.swing.JFrame {
 
         menuGauche.add(menu3Patient, "card2");
 
-        menu4Administrateur.setBackground(new java.awt.Color(255, 153, 0));
-
         BtnGererPatient.setText("Gerer Patient");
         BtnGererPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -523,8 +522,6 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
-        jLabel31.setText("menu administrateur");
-
         javax.swing.GroupLayout menu4AdministrateurLayout = new javax.swing.GroupLayout(menu4Administrateur);
         menu4Administrateur.setLayout(menu4AdministrateurLayout);
         menu4AdministrateurLayout.setHorizontalGroup(
@@ -534,30 +531,22 @@ public class Gabarit extends javax.swing.JFrame {
                 .addGroup(menu4AdministrateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu4AdministrateurLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(menu4AdministrateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu4AdministrateurLayout.createSequentialGroup()
-                                .addComponent(jLabel31)
-                                .addGap(53, 53, 53))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu4AdministrateurLayout.createSequentialGroup()
-                                .addComponent(BtnGererService, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
+                        .addComponent(BtnGererService, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnGererNoteService, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menu4AdministrateurLayout.createSequentialGroup()
-                        .addGroup(menu4AdministrateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnGererNoteService, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(menu4AdministrateurLayout.createSequentialGroup()
-                                .addGroup(menu4AdministrateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(BtnListePharmacieAValide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererPharmacie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererNewsletter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererActualité, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererCommentaire, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererReclamation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererStatistique, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererEvenemenet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnGererProfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 2, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addGroup(menu4AdministrateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BtnListePharmacieAValide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererPharmacie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererNewsletter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererActualité, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererCommentaire, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererReclamation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererStatistique, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererEvenemenet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnGererProfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 2, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         menu4AdministrateurLayout.setVerticalGroup(
             menu4AdministrateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,9 +575,7 @@ public class Gabarit extends javax.swing.JFrame {
                 .addComponent(BtnGererEvenemenet)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnGererProfil)
-                .addGap(78, 78, 78)
-                .addComponent(jLabel31)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         menuGauche.add(menu4Administrateur, "card2");
@@ -613,22 +600,19 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(ConnexionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonCnx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(ConnexionLayout.createSequentialGroup()
                         .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8))
                         .addGap(6, 6, 6)
                         .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1))
-                        .addContainerGap())
-                    .addGroup(ConnexionLayout.createSequentialGroup()
-                        .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonCnx, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(ConnexionLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jCheckBox1)))
-                        .addGap(0, 32, Short.MAX_VALUE))))
+                                .addComponent(jCheckBox1)
+                                .addGap(0, 20, Short.MAX_VALUE))
+                            .addComponent(jTextField2)
+                            .addComponent(jTextField1))))
+                .addContainerGap())
         );
         ConnexionLayout.setVerticalGroup(
             ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -641,11 +625,11 @@ public class Gabarit extends javax.swing.JFrame {
                 .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonCnx)
-                .addGap(17, 17, 17))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         contenuFixe.setBackground(new java.awt.Color(255, 204, 204));
@@ -1104,6 +1088,12 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
+        comboBoxListeRegionInterfaceNoter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxListeRegionInterfaceNoterActionPerformed(evt);
+            }
+        });
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1135,8 +1125,8 @@ public class Gabarit extends javax.swing.JFrame {
                 .addGap(283, 283, 283)
                 .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelGouvernoratInterNoter)
-                    .addComponent(labelRegionInteNoter)
-                    .addComponent(labelPhamrcieInterNoter))
+                    .addComponent(labelRegionInteNoter, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPhamrcieInterNoter, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(18, 18, 18)
                 .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(comboBoxListerGouvernoratInterNoter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1420,21 +1410,66 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel20.setText("Gerer service pharmcie");
 
+        labelLibelleIntefaGererPharmcie.setText("Libelle  : ");
+
+        labelPharmcieIntefaGererPharmcie.setText("Pharmacies :");
+
+        tableSupprimerIntefaGererPharmcie.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane13.setViewportView(tableSupprimerIntefaGererPharmcie);
+
+        buttonSupprimerIntefaGererPharmcie.setText("Supprimer");
+
         javax.swing.GroupLayout PanelGererServiceLayout = new javax.swing.GroupLayout(PanelGererService);
         PanelGererService.setLayout(PanelGererServiceLayout);
         PanelGererServiceLayout.setHorizontalGroup(
             PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelGererServiceLayout.createSequentialGroup()
+                .addGap(253, 253, 253)
+                .addGroup(PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonSupprimerIntefaGererPharmcie)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelGererServiceLayout.createSequentialGroup()
+                        .addGroup(PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelPharmcieIntefaGererPharmcie)
+                            .addComponent(labelLibelleIntefaGererPharmcie))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboBoxListePharmcieIntefaGererServicePharmcie, 0, 575, Short.MAX_VALUE)
+                            .addComponent(textFieldSupprimerIntefaGererPharmcie))))
+                .addContainerGap(250, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGererServiceLayout.createSequentialGroup()
-                .addContainerGap(378, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel20)
-                .addGap(338, 338, 338))
+                .addGap(353, 353, 353))
         );
         PanelGererServiceLayout.setVerticalGroup(
             PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelGererServiceLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel20)
-                .addContainerGap(547, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelLibelleIntefaGererPharmcie)
+                    .addComponent(textFieldSupprimerIntefaGererPharmcie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelGererServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxListePharmcieIntefaGererServicePharmcie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPharmcieIntefaGererPharmcie))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonSupprimerIntefaGererPharmcie)
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelGererService, "card2");
@@ -2127,6 +2162,18 @@ public class Gabarit extends javax.swing.JFrame {
         
     }//GEN-LAST:event_comboBoxListerGouvernoratInterNoterActionPerformed
 
+    private void comboBoxListeRegionInterfaceNoterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListeRegionInterfaceNoterActionPerformed
+/*
+        List<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
+        PharmacieService pharmacieService = new PharmacieService();
+        pharmacies = pharmacieService.DisplayAllPharmcieByRegion(comboBoxListeRegionInterfaceNoter.getSelectedItem().toString());
+        for(Pharmacie pharmacie : pharmacies)
+            comboBoxListePharmcieInterNoterService.addItem(pharmacie.getPhLibelle());
+        */
+        
+                
+    }//GEN-LAST:event_comboBoxListeRegionInterfaceNoterActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2221,11 +2268,13 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JButton buttonModfierProfilIntercaeProfil;
     private javax.swing.JButton buttonNoterService;
     private javax.swing.JButton buttonSinscri;
+    private javax.swing.JButton buttonSupprimerIntefaGererPharmcie;
     private javax.swing.JButton buttonValiderPharmcieInterfacePharmcieAValider;
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
     private javax.swing.JCheckBox checkBoxPharmcieDeGarde;
     private javax.swing.JComboBox comboBoxGouvernorat;
     private javax.swing.JComboBox comboBoxListeActualtieInterfaceAddComentaire;
+    private javax.swing.JComboBox comboBoxListePharmcieIntefaGererServicePharmcie;
     private javax.swing.JComboBox comboBoxListePharmcieInterNoterService;
     private javax.swing.JComboBox comboBoxListeRegionInterfaceNoter;
     private javax.swing.JComboBox comboBoxListerGouvernoratInterNoter;
@@ -2235,7 +2284,6 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2257,7 +2305,6 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -2276,6 +2323,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2293,10 +2341,12 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel labelGouvernoratInterNoter;
     private javax.swing.JLabel labelIdGouvernaratInterfacheNoterService;
     private java.awt.Label labelIdGouverneratInterfaceCherchePharmcie;
+    private javax.swing.JLabel labelLibelleIntefaGererPharmcie;
     private javax.swing.JLabel labelLoginInterModfierCompte;
     private javax.swing.JLabel labelNomInterModfierCompte;
     private javax.swing.JLabel labelPasswordInterModfierCompte;
     private javax.swing.JLabel labelPhamrcieInterNoter;
+    private javax.swing.JLabel labelPharmcieIntefaGererPharmcie;
     private javax.swing.JLabel labelRegionInteNoter;
     private javax.swing.JList listActualiterInterfaceListeCommentaire;
     private javax.swing.JList listbuttonCommentaireInterfaceAddComentaire;
@@ -2312,6 +2362,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTable tableListePharmcieGarde;
     private javax.swing.JTable tableListePharmcieParRegion;
     private javax.swing.JTable tableListePharmcieTypeJourNuit;
+    private javax.swing.JTable tableSupprimerIntefaGererPharmcie;
     private javax.swing.JTextArea textAreaCommentaireInterfaceAddComentaire;
     private javax.swing.JTextArea textAreaMessageReclamtionAdd;
     private javax.swing.JTextField textFieldAdresseInterModfierCompte;
@@ -2320,6 +2371,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNomInterModfierCompte;
     private javax.swing.JTextField textFieldPassWordInterModfierCompte;
     private javax.swing.JTextField textFieldPrenomInterModfierCompte;
+    private javax.swing.JTextField textFieldSupprimerIntefaGererPharmcie;
     private javax.swing.JTextField textFieldTitrereclamtionAdd;
     // End of variables declaration//GEN-END:variables
 }

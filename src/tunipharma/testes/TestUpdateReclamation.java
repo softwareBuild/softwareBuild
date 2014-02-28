@@ -5,7 +5,7 @@
 package tunipharma.testes;
 
 import java.sql.Date;
-import tunipharma.dao.DaoReclamation;
+import tunipharma.dao.ReclamationDAO;
 import tunipharma.entities.Reclamation;
 
 
@@ -16,7 +16,7 @@ import tunipharma.entities.Reclamation;
 public class TestUpdateReclamation {
          public static void main(String[] args) {
      Reclamation reclamation = new Reclamation();
-    DaoReclamation reclamationDAO = new DaoReclamation();
+    ReclamationDAO reclamationDAO = new ReclamationDAO();
     reclamation=reclamationDAO.findReclamationById(2);
     reclamation.setMsgReclamation("hh");
     
