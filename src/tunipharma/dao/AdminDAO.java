@@ -19,23 +19,49 @@ import tunipharma.util.MyConnection;
  */
 public class AdminDAO {
        public void updateAdministrateur(Admin ad) {
-        String requete = "update administrateur set idAdministrateur=?,login=?,pseudo=?,password=?,nom=?,prenom=?,adresse=? where idAdministrateur=?";
+        String requete = "update administrateur set login=?,password=?,nom=?,prenom=?,adresse=? where idAdministrateur=?";
 
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setInt(1, ad.getIdAdministrateur());
-            ps.setString(2, ad.getLogin());
-            ps.setString(3, ad.getPseudo());
-            ps.setString(4, ad.getPassword());
-            ps.setString(5, ad.getNom());
-            ps.setString(6, ad.getPrenom());
-            ps.setString(7, ad.getAdresse());
+            ps.setString(1, ad.getLogin());
+            ps.setString(2, ad.getPassword());
+            ps.setString(3, ad.getNom());
+            ps.setString(4, ad.getPrenom());
+            ps.setString(5, ad.getAdresse());
+            ps.setInt(6, ad.getIdAdministrateur());
+
             ps.executeUpdate();
             System.out.println("Mise à jour effectuée avec succès");
         } catch (SQLException ex) {
             System.out.println("erreur lors de la mise à jour " + ex.getMessage());
         }
     }
+       //findReclamationById c'est pour tester la methode update admin
+            public Admin findAdminById(int idAdmin){
+    Admin admin = new Admin();
+     String requete = "select * from administrateur where idAdministrateur =?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, idAdmin);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                admin.setIdAdministrateur(resultat.getInt(1));
+                admin.setLogin(resultat.getString(2));
+                admin.setPassword(resultat.getString(3));
+                admin.setNom(resultat.getString(4));
+                admin.setPrenom(resultat.getString(5));
+                admin.setAdresse(resultat.getString(6));
+
+            }
+            return admin;
+
+        } catch (SQLException ex) {
+            System.out.println("erreur lors de la recherche de la note "+ex.getMessage());
+            return null;
+        }
+    }  
+       
                public java.util.List<Admin> DisplayInfoAdmin() {
 
 

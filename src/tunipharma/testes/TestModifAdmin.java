@@ -17,14 +17,14 @@ public class TestModifAdmin {
     public static void main(String[] args) {
         Admin administrateur = new Admin();
         AdminDAO daoAdmin = new AdminDAO();
-        administrateur.setIdAdministrateur(0);
+            administrateur=daoAdmin.findAdminById(1);
+
         administrateur.setLogin("mana");
-        administrateur.setPseudo("mana");
-        administrateur.setPassword("mana");
-        administrateur.setNom("mana");
-        administrateur.setPrenom("mana");
-        administrateur.setAdresse("mana");
-       daoAdmin.updateAdministrateur(administrateur);
+//        administrateur.setPassword("mana");
+//        administrateur.setNom("mana");
+//        administrateur.setPrenom("mana");
+//        administrateur.setAdresse("mana");
+        daoAdmin.updateAdministrateur(administrateur);
        
      
       

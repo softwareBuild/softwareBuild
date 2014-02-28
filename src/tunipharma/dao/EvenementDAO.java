@@ -22,32 +22,32 @@ import tunipharma.util.MyConnection;
 public class EvenementDAO {
     public void insertEvenements(Evenement e){
 
-        String requete = "insert into evenements (idEvent,libEvent,dateEvent,heureEvent,lieuEvent,fklibellePharmacie) values (?,?,?,?,?,?)";
+        String requete = "insert into evenements (libEvent,dateEvent,heureEvent,lieuEvent,fklibellePharmacie) values (?,?,?,?,?)";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setInt(1, e.getIdEvent());
-            ps.setString(2, e.getLibEvent());
-            ps.setDate(3, e.getDateEvent());
-            ps.setTime(4, e.getHeureEvent());
-            ps.setString(5, e.getLieuEvent());
-            ps.setString(6, e.getFklibellePharmacie());
+            ps.setString(1, e.getLibEvent());
+            ps.setDate(2, e.getDateEvent());
+            ps.setTime(3, e.getHeureEvent());
+            ps.setString(4, e.getLieuEvent());
+            ps.setString(5, e.getFklibellePharmacie());
             ps.executeUpdate();
             System.out.println("Ajout effectuée avec succès d'evenements ");
         } catch (SQLException ex) {
             System.out.println("erreur lors de l'insertion "+ex.getMessage());
         }
     }
+    
         
         public void updateEvenements(Evenement e){
-        String requete = "update evenements set idEvent =?,libEvent=?,dateEvent=?,heureEvent=?,lieuEvent=?,fklibellePharmacie =? where phLibelle=?";
+        String requete = "update evenements set libEvent=?,dateEvent=?,heureEvent=?,lieuEvent=? where idEvent=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-           ps.setInt(1, e.getIdEvent());
-            ps.setString(2, e.getLibEvent());
-            ps.setDate(3, e.getDateEvent());
-            ps.setTime(4, e.getHeureEvent());
-            ps.setString(5, e.getLieuEvent());
-            ps.setString(6, e.getFklibellePharmacie());
+            ps.setString(1, e.getLibEvent());
+            ps.setDate(2, e.getDateEvent());
+            ps.setTime(3, e.getHeureEvent());
+            ps.setString(4, e.getLieuEvent());
+            ps.setInt(5, e.getIdEvent());
+
             ps.executeUpdate();
             System.out.println("Mise à jour effectuée avec succès de l'evenement");
         } catch (SQLException ex) {
@@ -97,6 +97,8 @@ public class EvenementDAO {
             return null;
         }
     }
+        
+        
              public List<Evenement> DisplayAllEvenementByLibelle(String libelle){ 
 
         List<Evenement> listeEvenements = new ArrayList<Evenement>();
@@ -125,5 +127,33 @@ public class EvenementDAO {
         }
     }
 
+ public Evenement findEvenementById(int idEvenement){
+    Evenement event = new Evenement();
+     String requete = "select * from evenements where idEvent =?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, idEvenement);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                event.setIdEvent(resultat.getInt(1));
+                event.setLibEvent(resultat.getString(2));
+                event.setDateEvent(resultat.getDate(3));
+                event.setHeureEvent(resultat.getTime(4));
+                event.setLieuEvent(resultat.getString(5));
+                event.setFklibellePharmacie(resultat.getString(6));
+
+            }
+            return event;
+
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche de la note "+ex.getMessage());
+            return null;
+        }
+    }            
+             
+             
+             
 
 }

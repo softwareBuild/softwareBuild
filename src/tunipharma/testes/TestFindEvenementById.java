@@ -4,7 +4,6 @@
  */
 package tunipharma.testes;
 
-
 import tunipharma.dao.EvenementDAO;
 import tunipharma.entities.Evenement;
 
@@ -12,14 +11,11 @@ import tunipharma.entities.Evenement;
  *
  * @author omar
  */
-public class testUpdateEvenement {
-     public static void main(String[] args) {
+public class TestFindEvenementById {
+       public static void main(String[] args) {
     Evenement evenement = new Evenement();
     EvenementDAO evenementDAO = new EvenementDAO();
-    evenement=evenementDAO.findEvenementById(2);
-    evenement.setLibEvent("rr");
-    evenementDAO.updateEvenements(evenement);    
-    
-    
-        }
+    evenement = evenementDAO.findEvenementById(2);
+    System.out.println(evenement);
+       }
 }
