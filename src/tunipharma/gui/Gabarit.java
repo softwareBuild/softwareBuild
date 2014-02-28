@@ -6,7 +6,12 @@ package tunipharma.GUI;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.List;
 import javax.swing.JOptionPane;
+import tunipharma.dao.GouvernratDAO;
+import tunipharma.dao.RegionDAO;
+import tunipharma.entities.Gouvernrat;
+import tunipharma.entities.Region;
 import tunipharma.models.PatientModel;
 
 /**
@@ -105,6 +110,7 @@ public class Gabarit extends javax.swing.JFrame {
         textFieldLibellePharmcieRecherche = new javax.swing.JTextField();
         comboBoxGouvernorat = new javax.swing.JComboBox();
         comboBoxRegion = new javax.swing.JComboBox();
+        labelIdGouverneratInterfaceCherchePharmcie = new java.awt.Label();
         PanelAjouterPharmacie = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         PanelAjouterService = new javax.swing.JPanel();
@@ -196,6 +202,11 @@ public class Gabarit extends javax.swing.JFrame {
         jPanelActualite = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         PanelTotal.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -805,6 +816,14 @@ public class Gabarit extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Chercher pharmcie", jPanel1);
 
+        comboBoxGouvernorat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxGouvernoratActionPerformed(evt);
+            }
+        });
+
+        labelIdGouverneratInterfaceCherchePharmcie.setText("label1");
+
         javax.swing.GroupLayout PanelChercherPharmacieLayout = new javax.swing.GroupLayout(PanelChercherPharmacie);
         PanelChercherPharmacie.setLayout(PanelChercherPharmacieLayout);
         PanelChercherPharmacieLayout.setHorizontalGroup(
@@ -815,12 +834,12 @@ public class Gabarit extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jTabbedPane1))
                     .addGroup(PanelChercherPharmacieLayout.createSequentialGroup()
+                        .addGap(380, 380, 380)
                         .addGroup(PanelChercherPharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addGroup(PanelChercherPharmacieLayout.createSequentialGroup()
-                                .addGap(380, 380, 380)
-                                .addComponent(jLabel3))
-                            .addGroup(PanelChercherPharmacieLayout.createSequentialGroup()
-                                .addGap(428, 428, 428)
+                                .addComponent(labelIdGouverneratInterfaceCherchePharmcie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanelChercherPharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(comboBoxGouvernorat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(comboBoxRegion, 0, 268, Short.MAX_VALUE))))
@@ -833,12 +852,14 @@ public class Gabarit extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(comboBoxGouvernorat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelChercherPharmacieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxGouvernorat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelIdGouverneratInterfaceCherchePharmcie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboBoxRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelChercherPharmacie, "card2");
@@ -1673,7 +1694,7 @@ public class Gabarit extends javax.swing.JFrame {
                     .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contenuFixe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(contenuFixe, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(menuGauche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2034,6 +2055,35 @@ public class Gabarit extends javax.swing.JFrame {
         contenuFixe.revalidate();
     }//GEN-LAST:event_BtnModifierCompteActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+        GouvernratDAO grouvermentDAO  = new GouvernratDAO();
+        List<Gouvernrat> grouverments = grouvermentDAO .DisplayAllGrouverment();
+        for (Gouvernrat grouverment : grouverments) 
+        {
+            comboBoxGouvernorat.addItem(grouverment.getLibG().toString());
+            comboBoxListerGouvernoratInterNoter.addItem(grouverment.getLibG().toString());
+        }
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void comboBoxGouvernoratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxGouvernoratActionPerformed
+        
+        GouvernratDAO grouvermentDAO  = new GouvernratDAO();
+        Gouvernrat g =  grouvermentDAO.findGrouvermentByLib(
+        comboBoxGouvernorat.getSelectedItem().toString());
+        labelIdGouverneratInterfaceCherchePharmcie.setText(String.valueOf(g.getIdG()));
+        
+        //Liste region
+        comboBoxRegion.removeAllItems();
+        RegionDAO regionDAO=new  RegionDAO();
+        List<Region> regions=regionDAO.DisplayAllRegionGouver( Integer.parseInt(labelIdGouverneratInterfaceCherchePharmcie.getText().toString()) ); 
+        for (Region region : regions) {
+        comboBoxRegion.addItem(region.getLibREgion());}  
+        
+    }//GEN-LAST:event_comboBoxGouvernoratActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2196,6 +2246,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel labeAdresseInterModfierCompte;
     private javax.swing.JLabel labePrenomInterModfierCompte;
     private javax.swing.JLabel labelGouvernoratInterNoter;
+    private java.awt.Label labelIdGouverneratInterfaceCherchePharmcie;
     private javax.swing.JLabel labelLoginInterModfierCompte;
     private javax.swing.JLabel labelNomInterModfierCompte;
     private javax.swing.JLabel labelPasswordInterModfierCompte;
