@@ -18,6 +18,7 @@ import tunipharma.util.MyConnection;
  * @author wael.boumaiza
  */
 public class PatientService {
+    
     public Patient findPatientById(int id){
     Patient patient = new Patient();
      String requete = "select * from patient where idPatient=?";
@@ -56,6 +57,28 @@ public class PatientService {
                 System.out.println("testttttttt"+ patient.getNom());
                 patient.setNom(resultat.getString(2));
                 System.out.println(resultat.getString(2));
+            }
+            return patient;
+
+        } catch (SQLException ex) {
+           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche du depot "+ex.getMessage());
+            return null;
+        }
+    }
+    
+    public Patient findPatientByNom(String nom){
+    Patient patient = new Patient();
+     String requete = "select * from patient where nom = ?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setString(1, nom);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next())
+            {
+                patient.setIdPatient(resultat.getInt(1));
+                patient.setNom(resultat.getString(2));
+                
             }
             return patient;
 

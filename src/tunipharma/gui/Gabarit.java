@@ -6,17 +6,25 @@ package tunipharma.GUI;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import tunipharma.dao.EvenementDAO;
 import tunipharma.dao.GouvernoratDAO;
+import tunipharma.dao.PatientDAO;
+import tunipharma.dao.ReclamationDAO;
 //import tunipharma.dao.PharmacieDAO;
 import tunipharma.dao.RegionDAO;
+import tunipharma.entities.Evenement;
 import tunipharma.entities.Gouvernorat;
 import tunipharma.entities.Pharmacie;
+import tunipharma.entities.Reclamation;
 import tunipharma.entities.Region;
+import tunipharma.models.EvenementModel;
 import tunipharma.models.PatientModel;
 import tunipharma.services.GouvernoratService;
+import tunipharma.services.PatientService;
 import tunipharma.services.PharmacieService;
 import tunipharma.services.RegionService;
 
@@ -165,7 +173,7 @@ public class Gabarit extends javax.swing.JFrame {
         PanelInscriptionEvenement = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        tableListeEvent = new javax.swing.JTable();
+        tableListeEventInterfaceEvent = new javax.swing.JTable();
         buttonSinscri = new javax.swing.JButton();
         PanelEnvoyerReclamation = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -1187,11 +1195,6 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel14.setText("Liste Actualite");
 
-        listActualiterInterfaceListeCommentaire.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane9.setViewportView(listActualiterInterfaceListeCommentaire);
 
         javax.swing.GroupLayout PanelListerActualitéLayout = new javax.swing.GroupLayout(PanelListerActualité);
@@ -1222,7 +1225,7 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel15.setText("Inscription evenement");
 
-        tableListeEvent.setModel(new javax.swing.table.DefaultTableModel(
+        tableListeEventInterfaceEvent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1233,7 +1236,7 @@ public class Gabarit extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane7.setViewportView(tableListeEvent);
+        jScrollPane7.setViewportView(tableListeEventInterfaceEvent);
 
         buttonSinscri.setText("Inscription");
 
@@ -1283,6 +1286,11 @@ public class Gabarit extends javax.swing.JFrame {
         jScrollPane6.setViewportView(textAreaMessageReclamtionAdd);
 
         buttonEnvoyerReclamtion.setText("Envoyer");
+        buttonEnvoyerReclamtion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEnvoyerReclamtionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelEnvoyerReclamationLayout = new javax.swing.GroupLayout(PanelEnvoyerReclamation);
         PanelEnvoyerReclamation.setLayout(PanelEnvoyerReclamationLayout);
@@ -2127,6 +2135,7 @@ public class Gabarit extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
+        //liste gouvernrat 
         GouvernoratDAO grouvermentDAO  = new GouvernoratDAO();
         List<Gouvernorat> grouverments = grouvermentDAO .DisplayAllGrouverment();
         for (Gouvernorat grouverment : grouverments) 
@@ -2134,6 +2143,21 @@ public class Gabarit extends javax.swing.JFrame {
             comboBoxGouvernorat.addItem(grouverment.getLibG().toString());
             comboBoxListerGouvernoratInterNoter.addItem(grouverment.getLibG().toString());
         }
+        //liste actualtié 
+        //listActualiterInterfaceListeCommentaire
+        
+        
+        //inscript evenemtn
+        /*
+        List<Evenement> evenements = new ArrayList<Evenement>();
+        EvenementDAO evenementDAO = new EvenementDAO();
+        evenements = evenementDAO.DisplayAllEvenement();
+        for (Evenement evenement : evenements) {
+            
+        }
+        */
+       // tableListeEventInterfaceEvent.setModel(new EvenementModel());
+        
         
         
     }//GEN-LAST:event_formWindowOpened
@@ -2189,6 +2213,22 @@ public class Gabarit extends javax.swing.JFrame {
     private void comboBoxListePharmcieInterNoterServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListePharmcieInterNoterServiceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxListePharmcieInterNoterServiceActionPerformed
+
+    private void buttonEnvoyerReclamtionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEnvoyerReclamtionActionPerformed
+
+        Date d=new Date(2014-1900,1,12);
+        
+         Reclamation reclation = new Reclamation();
+         ReclamationDAO reclamationDAO = new ReclamationDAO();
+         PatientDAO patientDAO = new PatientDAO();
+         PatientService patientService = new PatientService();
+         //reclation.setFkidPatient(patientService.findPatientByNom(jTextField1.getText()).getIdPatient());
+         reclation.setMsgReclamation(textAreaCommentaireInterfaceAddComentaire.getText());
+         reclation.setDateReclamation(d);
+         reclation.setHeureReclamation(new java.sql.Time(10, 10, 10));
+         reclamationDAO.insertReclamations(reclation);
+         
+    }//GEN-LAST:event_buttonEnvoyerReclamtionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2374,7 +2414,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel menuGauche;
     private javax.swing.JTable tableLisePharmceiInterfaceListePharmcieAvalider;
     private javax.swing.JTable tableListPharmcieLibelle;
-    private javax.swing.JTable tableListeEvent;
+    private javax.swing.JTable tableListeEventInterfaceEvent;
     private javax.swing.JTable tableListePharmcieGarde;
     private javax.swing.JTable tableListePharmcieParRegion;
     private javax.swing.JTable tableListePharmcieTypeJourNuit;
