@@ -122,6 +122,15 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         PanelNoterService = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        comboBoxListerGouvernoratInterNoter = new javax.swing.JComboBox();
+        comboBoxListeRegionInterfaceNoter = new javax.swing.JComboBox();
+        comboBoxListePharmcieInterNoterService = new javax.swing.JComboBox();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        labelGouvernoratInterNoter = new javax.swing.JLabel();
+        labelRegionInteNoter = new javax.swing.JLabel();
+        labelPhamrcieInterNoter = new javax.swing.JLabel();
+        buttonNoterService = new javax.swing.JButton();
         PanelListerActualité = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         PanelInscriptionEvenement = new javax.swing.JPanel();
@@ -980,25 +989,82 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelInscriptionInternaute, "card2");
 
-        PanelNoterService.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel13.setText("Noter Service pharmcie");
 
-        jLabel13.setText("noter Service");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable1);
+
+        labelGouvernoratInterNoter.setText("Gouvernorat :");
+
+        labelRegionInteNoter.setText("Region:");
+
+        labelPhamrcieInterNoter.setText("Pharmcie");
+
+        buttonNoterService.setText("Noter Servicie");
 
         javax.swing.GroupLayout PanelNoterServiceLayout = new javax.swing.GroupLayout(PanelNoterService);
         PanelNoterService.setLayout(PanelNoterServiceLayout);
         PanelNoterServiceLayout.setHorizontalGroup(
             PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelNoterServiceLayout.createSequentialGroup()
+                .addGap(283, 283, 283)
+                .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelGouvernoratInterNoter)
+                    .addComponent(labelRegionInteNoter)
+                    .addComponent(labelPhamrcieInterNoter))
+                .addGap(18, 18, 18)
+                .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comboBoxListerGouvernoratInterNoter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxListeRegionInterfaceNoter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxListePharmcieInterNoterService, 0, 446, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNoterServiceLayout.createSequentialGroup()
-                .addContainerGap(778, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(315, 315, 315))
+                .addContainerGap()
+                .addComponent(jScrollPane8)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNoterServiceLayout.createSequentialGroup()
+                .addContainerGap(358, Short.MAX_VALUE)
+                .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNoterServiceLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(351, 351, 351))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNoterServiceLayout.createSequentialGroup()
+                        .addComponent(buttonNoterService)
+                        .addContainerGap())))
         );
         PanelNoterServiceLayout.setVerticalGroup(
             PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNoterServiceLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel13)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxListerGouvernoratInterNoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelGouvernoratInterNoter))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxListeRegionInterfaceNoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelRegionInteNoter))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelNoterServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxListePharmcieInterNoterService, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPhamrcieInterNoter))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonNoterService)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelNoterService, "card2");
@@ -1953,10 +2019,14 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel PanelTotal;
     private javax.swing.JTable TableGestionPatient;
     private javax.swing.JButton buttonEnvoyerReclamtion;
+    private javax.swing.JButton buttonNoterService;
     private javax.swing.JButton buttonSinscri;
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
     private javax.swing.JCheckBox checkBoxPharmcieDeGarde;
     private javax.swing.JComboBox comboBoxGouvernorat;
+    private javax.swing.JComboBox comboBoxListePharmcieInterNoterService;
+    private javax.swing.JComboBox comboBoxListeRegionInterfaceNoter;
+    private javax.swing.JComboBox comboBoxListerGouvernoratInterNoter;
     private javax.swing.JComboBox comboBoxRegion;
     private javax.swing.JPanel contenuFixe;
     private javax.swing.JPanel footer;
@@ -2008,9 +2078,14 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel labelGouvernoratInterNoter;
+    private javax.swing.JLabel labelPhamrcieInterNoter;
+    private javax.swing.JLabel labelRegionInteNoter;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel menu1Internaute;
     private javax.swing.JPanel menu2Pharmacie;
