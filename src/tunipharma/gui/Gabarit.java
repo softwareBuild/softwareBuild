@@ -127,6 +127,9 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         PanelInscriptionEvenement = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tableListeEvent = new javax.swing.JTable();
+        buttonSinscri = new javax.swing.JButton();
         PanelEnvoyerReclamation = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -1034,25 +1037,54 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelListerActualité, "card2");
 
-        PanelInscriptionEvenement.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel15.setText("Inscription evenement");
 
-        jLabel15.setText("inscription evenement");
+        tableListeEvent.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(tableListeEvent);
+
+        buttonSinscri.setText("Inscription");
 
         javax.swing.GroupLayout PanelInscriptionEvenementLayout = new javax.swing.GroupLayout(PanelInscriptionEvenement);
         PanelInscriptionEvenement.setLayout(PanelInscriptionEvenementLayout);
         PanelInscriptionEvenementLayout.setHorizontalGroup(
             PanelInscriptionEvenementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInscriptionEvenementLayout.createSequentialGroup()
-                .addContainerGap(737, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(315, 315, 315))
+            .addGroup(PanelInscriptionEvenementLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelInscriptionEvenementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelInscriptionEvenementLayout.createSequentialGroup()
+                        .addComponent(jScrollPane7)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInscriptionEvenementLayout.createSequentialGroup()
+                        .addGap(0, 362, Short.MAX_VALUE)
+                        .addGroup(PanelInscriptionEvenementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInscriptionEvenementLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(369, 369, 369))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInscriptionEvenementLayout.createSequentialGroup()
+                                .addComponent(buttonSinscri, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(112, 112, 112))))))
         );
         PanelInscriptionEvenementLayout.setVerticalGroup(
             PanelInscriptionEvenementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelInscriptionEvenementLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel15)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonSinscri)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelInscriptionEvenement, "card2");
@@ -1932,6 +1964,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel PanelTotal;
     private javax.swing.JTable TableGestionPatient;
     private javax.swing.JButton buttonEnvoyerReclamtion;
+    private javax.swing.JButton buttonSinscri;
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
     private javax.swing.JCheckBox checkBoxPharmcieDeGarde;
     private javax.swing.JComboBox comboBoxGouvernorat;
@@ -1986,6 +2019,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -1996,6 +2030,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel menu4Administrateur;
     private javax.swing.JPanel menuGauche;
     private javax.swing.JTable tableListPharmcieLibelle;
+    private javax.swing.JTable tableListeEvent;
     private javax.swing.JTable tableListePharmcieGarde;
     private javax.swing.JTable tableListePharmcieParRegion;
     private javax.swing.JTable tableListePharmcieTypeJourNuit;
