@@ -129,6 +129,12 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         PanelEnvoyerReclamation = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        textFieldTitrereclamtionAdd = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        textAreaMessageReclamtionAdd = new javax.swing.JTextArea();
+        buttonEnvoyerReclamtion = new javax.swing.JButton();
         PanelModifierCompte = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         PanelGererPatient = new javax.swing.JPanel();
@@ -1051,25 +1057,57 @@ public class Gabarit extends javax.swing.JFrame {
 
         contenuFixe.add(PanelInscriptionEvenement, "card2");
 
-        PanelEnvoyerReclamation.setBackground(new java.awt.Color(0, 51, 102));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel16.setText("Envoyer reclamation");
 
-        jLabel16.setText("envoyer reclamation");
+        jLabel33.setText("Titre Reclation");
+
+        jLabel34.setText("Message Réclamtion");
+
+        textAreaMessageReclamtionAdd.setColumns(20);
+        textAreaMessageReclamtionAdd.setRows(5);
+        jScrollPane6.setViewportView(textAreaMessageReclamtionAdd);
+
+        buttonEnvoyerReclamtion.setText("Envoyer");
 
         javax.swing.GroupLayout PanelEnvoyerReclamationLayout = new javax.swing.GroupLayout(PanelEnvoyerReclamation);
         PanelEnvoyerReclamation.setLayout(PanelEnvoyerReclamationLayout);
         PanelEnvoyerReclamationLayout.setHorizontalGroup(
             PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEnvoyerReclamationLayout.createSequentialGroup()
-                .addContainerGap(744, Short.MAX_VALUE)
+                .addContainerGap(368, Short.MAX_VALUE)
                 .addComponent(jLabel16)
-                .addGap(315, 315, 315))
+                .addGap(359, 359, 359))
+            .addGroup(PanelEnvoyerReclamationLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonEnvoyerReclamtion)
+                    .addGroup(PanelEnvoyerReclamationLayout.createSequentialGroup()
+                        .addGroup(PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel33))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textFieldTitrereclamtionAdd)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelEnvoyerReclamationLayout.setVerticalGroup(
             PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelEnvoyerReclamationLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel16)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addGroup(PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(textFieldTitrereclamtionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelEnvoyerReclamationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonEnvoyerReclamtion)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         contenuFixe.add(PanelEnvoyerReclamation, "card2");
@@ -1893,6 +1931,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel PanelNoterService;
     private javax.swing.JPanel PanelTotal;
     private javax.swing.JTable TableGestionPatient;
+    private javax.swing.JButton buttonEnvoyerReclamtion;
     private javax.swing.JCheckBox checkBoxPhamrcieDeNuit;
     private javax.swing.JCheckBox checkBoxPharmcieDeGarde;
     private javax.swing.JComboBox comboBoxGouvernorat;
@@ -1928,6 +1967,8 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1944,6 +1985,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -1957,6 +1999,8 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTable tableListePharmcieGarde;
     private javax.swing.JTable tableListePharmcieParRegion;
     private javax.swing.JTable tableListePharmcieTypeJourNuit;
+    private javax.swing.JTextArea textAreaMessageReclamtionAdd;
     private javax.swing.JTextField textFieldLibellePharmcieRecherche;
+    private javax.swing.JTextField textFieldTitrereclamtionAdd;
     // End of variables declaration//GEN-END:variables
 }
