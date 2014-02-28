@@ -15,9 +15,6 @@ import tunipharma.entities.Note;
  * @author ali
  */
 
- 
-
-
 public class NoteModel extends   AbstractTableModel {
 
     List<Note> note = new ArrayList<Note>();

@@ -7,7 +7,7 @@ package tunipharma.testes;
 import java.util.ArrayList;
 import java.util.List;
 import tunipharma.dao.ReclamationDAO;
-import tunipharma.dao.PharmacieDAO;
+//import tunipharma.dao.PharmacieDAO;
 import tunipharma.entities.Pharmacie;
 import tunipharma.entities.Reclamation;
 

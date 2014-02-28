@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import tunipharma.dao.GouvernoratDAO;
-import tunipharma.dao.PharmacieDAO;
+//import tunipharma.dao.PharmacieDAO;
 import tunipharma.dao.RegionDAO;
 import tunipharma.entities.Gouvernorat;
 import tunipharma.entities.Pharmacie;
@@ -1093,6 +1093,12 @@ public class Gabarit extends javax.swing.JFrame {
         comboBoxListeRegionInterfaceNoter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxListeRegionInterfaceNoterActionPerformed(evt);
+            }
+        });
+
+        comboBoxListePharmcieInterNoterService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxListePharmcieInterNoterServiceActionPerformed(evt);
             }
         });
 
@@ -2179,6 +2185,10 @@ public class Gabarit extends javax.swing.JFrame {
         
                 
     }//GEN-LAST:event_comboBoxListeRegionInterfaceNoterActionPerformed
+
+    private void comboBoxListePharmcieInterNoterServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListePharmcieInterNoterServiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxListePharmcieInterNoterServiceActionPerformed
 
     /**
      * @param args the command line arguments
