@@ -6,7 +6,7 @@ package tunipharma.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import tunipharma.dao.PharmacieServiceDAO;
+import tunipharma.dao.ServicePharmcieDAO;
 import tunipharma.entities.PharmacieService;
 
 /**
@@ -18,7 +18,7 @@ public class TestDisplayService {
     public static void main(String[] args) {
 
         List<PharmacieService> service = new ArrayList<PharmacieService>();
-        PharmacieServiceDAO pharmacieServiceDAO = new PharmacieServiceDAO();
+        ServicePharmcieDAO pharmacieServiceDAO = new ServicePharmcieDAO();
         
         service = pharmacieServiceDAO.DisplayAllServices();                        // à verifier
         for (int i = 0; i < service.size(); i++) {

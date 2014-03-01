@@ -6,6 +6,7 @@ package tunipharma.testes;
 
 import tunipharma.dao.ReclamationDAO;
 import tunipharma.entities.Reclamation;
+import tunipharma.services.ReclamationService;
 
 /**
  *
@@ -16,7 +17,8 @@ public class TestFindReclamationById {
     
     Reclamation reclamation = new Reclamation();
     ReclamationDAO reclamationDAO = new ReclamationDAO();
-    reclamation = reclamationDAO.findReclamationById(1);
+    ReclamationService reclamationService = new ReclamationService();
+    reclamation = reclamationService.findReclamationById(1);
         System.out.println(reclamation);
     
     }

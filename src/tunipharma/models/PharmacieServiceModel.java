@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import tunipharma.entities.PharmacieService;
-import tunipharma.dao.PharmacieServiceDAO;
+import tunipharma.dao.ServicePharmcieDAO;
 
 /**
  *
@@ -25,7 +25,7 @@ public class PharmacieServiceModel extends   AbstractTableModel {
     String[] entete = {"ID Service","Libellé Service","fkidPharmacie"};
     
     public PharmacieServiceModel(){
-        service = new PharmacieServiceDAO().DisplayAllServices();
+        service = new ServicePharmcieDAO().DisplayAllServices();
     }
             
     public int getRowCount() {

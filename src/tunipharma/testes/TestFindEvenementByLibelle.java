@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import tunipharma.dao.EvenementDAO;
 import tunipharma.entities.Evenement;
+import tunipharma.services.EvenmentService;
 
 /**
  *
@@ -18,8 +19,10 @@ public class TestFindEvenementByLibelle {
     
     Evenement evenement  = new Evenement();
     EvenementDAO evenementDAO = new EvenementDAO();
+    EvenmentService evenmentService = new EvenmentService();
+    
     List<Evenement> evenements = new ArrayList<Evenement>();
-    evenements = evenementDAO.DisplayAllEvenementByLibelle("2");
+    evenements = evenmentService.DisplayAllEvenementByLibelle("2");
     for (int i = 0; i < evenements.size(); i++) 
     {
         System.out.println(evenements.get(i).toString()); 

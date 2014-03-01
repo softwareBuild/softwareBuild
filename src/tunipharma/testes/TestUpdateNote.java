@@ -6,6 +6,7 @@ package tunipharma.Test;
 
 import tunipharma.dao.NoteDAO;
 import tunipharma.entities.Note;
+import tunipharma.services.NoteService;
 
 /**
  *
@@ -16,12 +17,11 @@ public class TestUpdateNote {
     
     public static void main(String[] args) {
 
-         Note notes = new Note();
+        Note notes = new Note();
         NoteDAO notesDAO = new NoteDAO();
-        notes = notesDAO.findNoteById(5);
-        //notes.SetIdNote(1);
+        NoteService noteService = new NoteService();
+        notes = noteService.findNoteById(5);
         notes.SetNoteAtt(20);
-        
         notesDAO.updateNote(notes);
 
     }

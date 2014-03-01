@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tunipharma.Test;
+package tunipharma.testes;
 
 /**
  *
@@ -10,8 +10,9 @@ package tunipharma.Test;
  */
 
 
-import tunipharma.dao.PharmacieServiceDAO;
+import tunipharma.dao.ServicePharmcieDAO;
 import tunipharma.entities.PharmacieService;
+import tunipharma.services.ServicePharmcieService;
 
 
 public class TestUpdateService {
@@ -19,9 +20,9 @@ public class TestUpdateService {
     public static void main(String[] args) {
 
         PharmacieService service = new PharmacieService();
-        PharmacieServiceDAO serviceDAO = new PharmacieServiceDAO();
-        service = serviceDAO.findServiceByLibellle("infirmerie");
-        //service=serviceDAO.findServiceById(1);
+        ServicePharmcieDAO serviceDAO = new ServicePharmcieDAO();
+        ServicePharmcieService servicePharmcieService = new ServicePharmcieService();
+        service = servicePharmcieService.findServiceByLibellle("infirmerie");
         service.setLibelleService("7IIIIIIIIIIIIIIIT");
         serviceDAO.updateService(service);
 

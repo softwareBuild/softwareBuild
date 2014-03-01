@@ -4,13 +4,8 @@
  */
 package tunipharma.Test;
 
-import tunipharma.dao.PharmacieServiceDAO;
-
-/**
- *
- * @author ali
- */
-import tunipharma.dao.PharmacieServiceDAO;
+import tunipharma.dao.ServicePharmcieDAO;
+import tunipharma.dao.ServicePharmcieDAO;
 import tunipharma.entities.PharmacieService;
 
 
@@ -19,7 +14,7 @@ public class TestDeleteService {
     public static void main(String[] args) {
 
         PharmacieService service = new PharmacieService();
-        PharmacieServiceDAO serviceDAO = new PharmacieServiceDAO();         // à verifier
+        ServicePharmcieDAO serviceDAO = new ServicePharmcieDAO();         // à verifier
        // service = serviceDAO.findServiceById(1);
        // service.getIdService();
         serviceDAO.deleteService(1);

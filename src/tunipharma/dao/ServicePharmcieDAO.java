@@ -19,7 +19,7 @@ import java.util.List;
 import tunipharma.entities.PharmacieService;
 import tunipharma.util.MyConnection;
 
-public class PharmacieServiceDAO {
+public class ServicePharmcieDAO {
     
     
     public void insertService(PharmacieService p){
@@ -38,8 +38,6 @@ public class PharmacieServiceDAO {
         }
     }
     
-    
-    
     public void updateService(PharmacieService p){
         String requete = "update pharmacieservice set libelleService=? where idService=?";
         try {
@@ -54,8 +52,6 @@ public class PharmacieServiceDAO {
         }
     }
     
-    
-    
     public void deleteService(int id){
         String requete = "delete from pharmacieservice where idService='"+id+"'";
         try {
@@ -66,53 +62,6 @@ public class PharmacieServiceDAO {
         } catch (SQLException ex) {
            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors de la suppression "+ex.getMessage());
-        }
-    }
-    
-    
-    public PharmacieService findServiceById(int id){
-    PharmacieService service = new PharmacieService();
-     String requete = "select * from pharmacieservice where idService=?";
-        try {
-            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setInt(1, id);
-            ResultSet resultat = ps.executeQuery();
-            while (resultat.next())
-            {
-                service.setIdService(resultat.getInt(1));
-                service.setLibelleService(resultat.getString(2));
-            }
-            return service;
-
-        } catch (SQLException ex) {
-           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors de la recherche du service "+ex.getMessage());
-            return null;
-        }
-    }
-    
-    public PharmacieService findServiceByLibellle(String nom){
-    PharmacieService service = new PharmacieService();
-     String requete = "select * from pharmacieservice where libelleService =?";
-        try {
-            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setString(1, nom);
-            ResultSet resultat = ps.executeQuery();
-            while (resultat.next())
-            {
-                service.setIdService(resultat.getInt(1));
-                System.out.println("test"+service.getIdService());
-                service.setLibelleService(resultat.getString(2));
-                System.out.println(resultat.getString(2));
-                service.setFkidPharmacie(resultat.getInt(3));
-                System.out.println(resultat.getInt(3));
-            }
-            return service;
-
-        } catch (SQLException ex) {
-           //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("erreur lors de la recherche du service "+ex.getMessage());
-            return null;
         }
     }
     
@@ -141,6 +90,4 @@ public class PharmacieServiceDAO {
             return null;
         }
     }
-    
-    
 }

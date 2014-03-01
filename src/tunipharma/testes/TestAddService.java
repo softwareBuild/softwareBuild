@@ -10,7 +10,7 @@ package tunipharma.Test;
  */
 
 
-import tunipharma.dao.PharmacieServiceDAO;
+import tunipharma.dao.ServicePharmcieDAO;
 import tunipharma.entities.PharmacieService;
 
 
@@ -19,7 +19,7 @@ public class TestAddService {
     
     public static void main(String[] args) {
         PharmacieService service = new PharmacieService();
-        PharmacieServiceDAO serviceDAO = new PharmacieServiceDAO();
+        ServicePharmcieDAO serviceDAO = new ServicePharmcieDAO();
         service.setIdService(0);
         service.setLibelleService("infirmerie");
         service.setFkidPharmacie(2);

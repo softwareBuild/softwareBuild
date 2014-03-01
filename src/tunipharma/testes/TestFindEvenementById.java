@@ -6,6 +6,7 @@ package tunipharma.testes;
 
 import tunipharma.dao.EvenementDAO;
 import tunipharma.entities.Evenement;
+import tunipharma.services.EvenmentService;
 
 /**
  *
@@ -15,7 +16,9 @@ public class TestFindEvenementById {
        public static void main(String[] args) {
     Evenement evenement = new Evenement();
     EvenementDAO evenementDAO = new EvenementDAO();
-    evenement = evenementDAO.findEvenementById(2);
+    EvenmentService evenmentService = new EvenmentService();
+    
+    evenement = evenmentService.findEvenementById(2);
     System.out.println(evenement);
        }
 }
