@@ -18,7 +18,7 @@ public class AuthentificationSERVICE{
     
     
     public boolean connexion(String login , String password){
-        
+        String connecter;
         String requete = "select * from patient where login='"+login+"' and password='"+password+"'";
         String requete1 = "select * from pharmacien where login='"+login+"' and password='"+password+"'";
         String requete2 = "select * from administrateur where login='"+login+"' and password='"+password+"'";
@@ -30,8 +30,12 @@ public class AuthentificationSERVICE{
             while (resultat.next())
             {i++;}
             if (i==1)
-            {System.out.println("Patient connecté ");
-            return true;}
+            {
+                
+                System.out.println("Patient connecté ");
+                connecter = "patien";
+                return true;
+            }
 
             PreparedStatement ps1 = MyConnection.getInstance().prepareStatement(requete1);
             ResultSet resultat1 = ps1.executeQuery();
@@ -40,6 +44,7 @@ public class AuthentificationSERVICE{
             {i1++;}
             if (i1==1)
             {System.out.println("Pharmacien connecté ");
+            connecter = "pharma";
             return true;}
 
             PreparedStatement ps2 = MyConnection.getInstance().prepareStatement(requete2);
@@ -49,6 +54,7 @@ public class AuthentificationSERVICE{
             {i2++;}
             if (i2==1)
             {System.out.println("Administrateur connecté ");
+            connecter = "admin";
             return true;}
 
         } catch (SQLException ex) {

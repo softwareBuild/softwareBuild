@@ -54,9 +54,11 @@ public class PatientService {
             while (resultat.next())
             {
                 patient.setIdPatient(resultat.getInt(1));
-                System.out.println("testttttttt"+ patient.getNom());
-                patient.setNom(resultat.getString(2));
-                System.out.println(resultat.getString(2));
+                patient.setLogin(resultat.getString(2));
+                patient.setPassword(resultat.getString(3));
+                patient.setNom(resultat.getString(4));
+                patient.setPrenom(resultat.getString(5));
+                patient.setAdresse(resultat.getString(6));
             }
             return patient;
 
@@ -69,7 +71,7 @@ public class PatientService {
     
     public Patient findPatientByNom(String nom){
     Patient patient = new Patient();
-     String requete = "select * from patient where nom = ?";
+     String requete = "select * from patient where nom =?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setString(1, nom);
@@ -77,7 +79,11 @@ public class PatientService {
             while (resultat.next())
             {
                 patient.setIdPatient(resultat.getInt(1));
-                patient.setNom(resultat.getString(2));
+                patient.setLogin(resultat.getString(2));
+                patient.setPassword(resultat.getString(3));
+                patient.setNom(resultat.getString(4));
+                patient.setPrenom(resultat.getString(5));
+                patient.setAdresse(resultat.getString(6));
                 
             }
             return patient;

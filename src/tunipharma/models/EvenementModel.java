@@ -27,12 +27,12 @@ public class EvenementModel extends AbstractTableModel{
     }
     @Override
     public int getRowCount() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return evenements.size();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return entete.length;
     }
 
     @Override

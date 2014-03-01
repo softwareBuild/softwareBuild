@@ -54,6 +54,7 @@ public class PatientModel extends AbstractTableModel {
         
         
     }
+    
     public String getColumnName(int colum){
         return  entete[colum];
     }

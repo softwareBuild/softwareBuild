@@ -20,11 +20,13 @@ import tunipharma.dao.RegionDAO;
 import tunipharma.entities.Actualites;
 import tunipharma.entities.Evenement;
 import tunipharma.entities.Gouvernorat;
+import tunipharma.entities.Patient;
 import tunipharma.entities.Pharmacie;
 import tunipharma.entities.Reclamation;
 import tunipharma.entities.Region;
 import tunipharma.models.EvenementModel;
 import tunipharma.models.PatientModel;
+import tunipharma.services.AuthentificationSERVICE;
 import tunipharma.services.GouvernoratService;
 import tunipharma.services.PatientService;
 import tunipharma.services.PharmacieService;
@@ -97,8 +99,8 @@ public class Gabarit extends javax.swing.JFrame {
         BtnGererProfil = new javax.swing.JButton();
         Connexion = new javax.swing.JPanel();
         ButtonCnx = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldLoginInterface1 = new javax.swing.JTextField();
+        textFieldPasswordInterface1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -154,6 +156,7 @@ public class Gabarit extends javax.swing.JFrame {
         textFieldPrenomInterModfierCompte = new javax.swing.JTextField();
         textFieldAdresseInterModfierCompte = new javax.swing.JTextField();
         buttonModfierProfilIntercaeProfil = new javax.swing.JButton();
+        labelIdPatientInterfaceModifierCompte = new java.awt.Label();
         PanelInscriptionInternaute = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         PanelNoterService = new javax.swing.JPanel();
@@ -162,7 +165,7 @@ public class Gabarit extends javax.swing.JFrame {
         comboBoxListeRegionInterfaceNoter = new javax.swing.JComboBox();
         comboBoxListePharmcieInterNoterService = new javax.swing.JComboBox();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table1ListeServiceInterfacenoterServicePharmcie = new javax.swing.JTable();
         labelGouvernoratInterNoter = new javax.swing.JLabel();
         labelRegionInteNoter = new javax.swing.JLabel();
         labelPhamrcieInterNoter = new javax.swing.JLabel();
@@ -171,7 +174,7 @@ public class Gabarit extends javax.swing.JFrame {
         PanelListerActualité = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        listActualiterInterfaceListeCommentaire = new javax.swing.JList();
+        listActualiterInterfaceListeActualite = new javax.swing.JList();
         PanelInscriptionEvenement = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -599,6 +602,12 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
+        textFieldLoginInterface1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldLoginInterface1ActionPerformed(evt);
+            }
+        });
+
         jLabel7.setText("Login :");
 
         jLabel8.setText("Password : ");
@@ -622,8 +631,8 @@ public class Gabarit extends javax.swing.JFrame {
                             .addGroup(ConnexionLayout.createSequentialGroup()
                                 .addComponent(jCheckBox1)
                                 .addGap(0, 20, Short.MAX_VALUE))
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1))))
+                            .addComponent(textFieldPasswordInterface1)
+                            .addComponent(textFieldLoginInterface1))))
                 .addContainerGap())
         );
         ConnexionLayout.setVerticalGroup(
@@ -631,11 +640,11 @@ public class Gabarit extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ConnexionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldLoginInterface1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(ConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldPasswordInterface1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
@@ -1006,6 +1015,13 @@ public class Gabarit extends javax.swing.JFrame {
         labeAdresseInterModfierCompte.setText("Adresse");
 
         buttonModfierProfilIntercaeProfil.setText("Modifier");
+        buttonModfierProfilIntercaeProfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonModfierProfilIntercaeProfilActionPerformed(evt);
+            }
+        });
+
+        labelIdPatientInterfaceModifierCompte.setText("label1");
 
         javax.swing.GroupLayout PanelModifierProfilLayout = new javax.swing.GroupLayout(PanelModifierProfil);
         PanelModifierProfil.setLayout(PanelModifierProfilLayout);
@@ -1021,13 +1037,19 @@ public class Gabarit extends javax.swing.JFrame {
                         .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(buttonModfierProfilIntercaeProfil)
                             .addGroup(PanelModifierProfilLayout.createSequentialGroup()
-                                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelLoginInterModfierCompte)
-                                    .addComponent(labelPasswordInterModfierCompte)
-                                    .addComponent(labelNomInterModfierCompte)
-                                    .addComponent(labePrenomInterModfierCompte)
-                                    .addComponent(labeAdresseInterModfierCompte))
-                                .addGap(37, 37, 37)
+                                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(PanelModifierProfilLayout.createSequentialGroup()
+                                        .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelPasswordInterModfierCompte)
+                                            .addComponent(labelNomInterModfierCompte)
+                                            .addComponent(labePrenomInterModfierCompte)
+                                            .addComponent(labeAdresseInterModfierCompte))
+                                        .addGap(37, 37, 37))
+                                    .addGroup(PanelModifierProfilLayout.createSequentialGroup()
+                                        .addComponent(labelLoginInterModfierCompte)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(labelIdPatientInterfaceModifierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(textFieldLoginInterModfierCompte)
                                     .addComponent(textFieldPassWordInterModfierCompte)
@@ -1042,9 +1064,11 @@ public class Gabarit extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel11)
                 .addGap(116, 116, 116)
-                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelLoginInterModfierCompte)
-                    .addComponent(textFieldLoginInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelLoginInterModfierCompte)
+                        .addComponent(textFieldLoginInterModfierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelIdPatientInterfaceModifierCompte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelModifierProfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPasswordInterModfierCompte)
@@ -1112,7 +1136,7 @@ public class Gabarit extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table1ListeServiceInterfacenoterServicePharmcie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1123,7 +1147,7 @@ public class Gabarit extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane8.setViewportView(jTable1);
+        jScrollPane8.setViewportView(table1ListeServiceInterfacenoterServicePharmcie);
 
         labelGouvernoratInterNoter.setText("Gouvernorat :");
 
@@ -1197,7 +1221,7 @@ public class Gabarit extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel14.setText("Liste Actualite");
 
-        jScrollPane9.setViewportView(listActualiterInterfaceListeCommentaire);
+        jScrollPane9.setViewportView(listActualiterInterfaceListeActualite);
 
         javax.swing.GroupLayout PanelListerActualitéLayout = new javax.swing.GroupLayout(PanelListerActualité);
         PanelListerActualité.setLayout(PanelListerActualitéLayout);
@@ -1745,7 +1769,7 @@ public class Gabarit extends javax.swing.JFrame {
         );
         jPanelActualiteLayout.setVerticalGroup(
             jPanelActualiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 162, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelTotalLayout = new javax.swing.GroupLayout(PanelTotal);
@@ -1796,9 +1820,31 @@ public class Gabarit extends javax.swing.JFrame {
 
     private void ButtonCnxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCnxActionPerformed
 
-        if (jTextField1.getText().equals(""))
+        
+        
+        
+        //interface modifier compte
+        PatientService patientService = new PatientService();
+        textFieldLoginInterModfierCompte.setText(patientService.findPatientByNom(textFieldLoginInterface1.getText().toString()).getLogin()); 
+        textFieldNomInterModfierCompte.setText(patientService.findPatientByNom(textFieldLoginInterface1.getText().toString()).getNom());
+        textFieldPrenomInterModfierCompte.setText(patientService.findPatientByNom(textFieldLoginInterface1.getText().toString()).getPrenom());
+        textFieldPassWordInterModfierCompte.setText(patientService.findPatientByNom(textFieldLoginInterface1.getText().toString()).getPassword());
+        textFieldAdresseInterModfierCompte.setText(patientService.findPatientByNom(textFieldLoginInterface1.getText().toString()).getAdresse());
+        labelIdPatientInterfaceModifierCompte.setText(String.valueOf(patientService.findPatientByNom(textFieldLoginInterface1.getText().toString()).getIdPatient()));
+        
+        
+        //connection 
+        AuthentificationSERVICE authentificationSERVICE = new AuthentificationSERVICE();
+        
+        //boolean test;
+        
+        //String Connecte1;
+        //test = authentificationSERVICE.connexion(textFieldLoginInterface1.getText(), textFieldPasswordInterface1.getText()),Connecte1;
+        //connexion
+        
+        if (textFieldLoginInterface1.getText().equals(""))
             JOptionPane.showMessageDialog(this,"no param");
-        if (jTextField1.getText().equals("ph"))
+        if (textFieldLoginInterface1.getText().equals("ph"))
         {
         // pharmacie        
         menuGauche.removeAll();
@@ -1809,7 +1855,7 @@ public class Gabarit extends javax.swing.JFrame {
          menuGauche.repaint();
         menuGauche.revalidate();
         }
-        if (jTextField1.getText().equals("pa"))
+        if (textFieldLoginInterface1.getText().equals("salem"))
         {
             //patient
          menuGauche.removeAll();
@@ -1820,7 +1866,7 @@ public class Gabarit extends javax.swing.JFrame {
          menuGauche.repaint();
         menuGauche.revalidate();
         }
-        if (jTextField1.getText().equals("a"))
+        if (textFieldLoginInterface1.getText().equals("a"))
         {
         //administrateur
          menuGauche.removeAll();
@@ -2137,6 +2183,9 @@ public class Gabarit extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
+        //liste service 
+        //table1ListeServiceInterfacenoterServicePharmcie.setModel(new // );
+        
         //liste gouvernrat 
         GouvernoratDAO grouvermentDAO  = new GouvernoratDAO();
         List<Gouvernorat> grouverments = grouvermentDAO .DisplayAllGrouverment();
@@ -2145,17 +2194,19 @@ public class Gabarit extends javax.swing.JFrame {
             comboBoxGouvernorat.addItem(grouverment.getLibG().toString());
             comboBoxListerGouvernoratInterNoter.addItem(grouverment.getLibG().toString());
         }
-        //liste actualtié 
         
+        //liste actualtié 
         List<Actualites> actualites = new ArrayList<Actualites>();
         ActualiteDAO actualiteDAO = new ActualiteDAO();
         actualites = actualiteDAO.DisplayAllActualites();
         
         for (Actualites actualite : actualites) {
-           // listActualiterInterfaceListeCommentaire.setModel(actualite);
-            comboBoxListeActualtieInterfaceAddComentaire.addItem(actualite.getLibelleActualite().toString());
+           comboBoxListeActualtieInterfaceAddComentaire.addItem(actualite.getLibelleActualite().toString());
+           //listActualiterInterfaceListeActualite.add("salem", this);
         }
         
+        //liste evenment 
+        tableListeEventInterfaceEvent.setModel(new EvenementModel());
         
         //inscript evenemtn
         /*
@@ -2166,8 +2217,6 @@ public class Gabarit extends javax.swing.JFrame {
             
         }
         */
-       // tableListeEventInterfaceEvent.setModel(new EvenementModel());
-        
         
         
     }//GEN-LAST:event_formWindowOpened
@@ -2232,13 +2281,32 @@ public class Gabarit extends javax.swing.JFrame {
          ReclamationDAO reclamationDAO = new ReclamationDAO();
          PatientDAO patientDAO = new PatientDAO();
          PatientService patientService = new PatientService();
-         //reclation.setFkidPatient(patientService.findPatientByNom(jTextField1.getText()).getIdPatient());
-         reclation.setMsgReclamation(textAreaCommentaireInterfaceAddComentaire.getText());
+         reclation.setFkidPatient(patientService.findPatientByNom(textFieldLoginInterface1.getText()).getIdPatient());
+         reclation.setMsgReclamation(textAreaCommentaireInterfaceAddComentaire.getText().toString());
          reclation.setDateReclamation(d);
          reclation.setHeureReclamation(new java.sql.Time(10, 10, 10));
          reclamationDAO.insertReclamations(reclation);
+         JOptionPane.showMessageDialog(this, "Votre reclamtion est bien enovyer");
          
     }//GEN-LAST:event_buttonEnvoyerReclamtionActionPerformed
+
+    private void textFieldLoginInterface1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldLoginInterface1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldLoginInterface1ActionPerformed
+
+    private void buttonModfierProfilIntercaeProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModfierProfilIntercaeProfilActionPerformed
+
+        
+        Patient patient = new Patient();
+        PatientDAO patienDAO = new PatientDAO();
+        PatientService patientService = new PatientService();
+        patient = patientService.findPatientById(Integer.parseInt(labelIdPatientInterfaceModifierCompte.getText().toString()));
+        patient.setNom(textFieldNomInterModfierCompte.getText().toString());
+        patienDAO.updatePatient(patient);
+        JOptionPane.showMessageDialog(this, "Compte bien modifier");
+        
+        
+    }//GEN-LAST:event_buttonModfierProfilIntercaeProfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2399,14 +2467,12 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labeAdresseInterModfierCompte;
     private javax.swing.JLabel labePrenomInterModfierCompte;
     private javax.swing.JLabel labelGouvernoratInterNoter;
     private javax.swing.JLabel labelIdGouvernaratInterfacheNoterService;
     private java.awt.Label labelIdGouverneratInterfaceCherchePharmcie;
+    private java.awt.Label labelIdPatientInterfaceModifierCompte;
     private javax.swing.JLabel labelLibelleIntefaGererPharmcie;
     private javax.swing.JLabel labelLoginInterModfierCompte;
     private javax.swing.JLabel labelNomInterModfierCompte;
@@ -2414,7 +2480,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JLabel labelPhamrcieInterNoter;
     private javax.swing.JLabel labelPharmcieIntefaGererPharmcie;
     private javax.swing.JLabel labelRegionInteNoter;
-    private javax.swing.JList listActualiterInterfaceListeCommentaire;
+    private javax.swing.JList listActualiterInterfaceListeActualite;
     private javax.swing.JList listbuttonCommentaireInterfaceAddComentaire;
     private javax.swing.JPanel logo;
     private javax.swing.JPanel menu1Internaute;
@@ -2422,6 +2488,7 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JPanel menu3Patient;
     private javax.swing.JPanel menu4Administrateur;
     private javax.swing.JPanel menuGauche;
+    private javax.swing.JTable table1ListeServiceInterfacenoterServicePharmcie;
     private javax.swing.JTable tableLisePharmceiInterfaceListePharmcieAvalider;
     private javax.swing.JTable tableListPharmcieLibelle;
     private javax.swing.JTable tableListeEventInterfaceEvent;
@@ -2434,8 +2501,10 @@ public class Gabarit extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldAdresseInterModfierCompte;
     private javax.swing.JTextField textFieldLibellePharmcieRecherche;
     private javax.swing.JTextField textFieldLoginInterModfierCompte;
+    private javax.swing.JTextField textFieldLoginInterface1;
     private javax.swing.JTextField textFieldNomInterModfierCompte;
     private javax.swing.JTextField textFieldPassWordInterModfierCompte;
+    private javax.swing.JTextField textFieldPasswordInterface1;
     private javax.swing.JTextField textFieldPrenomInterModfierCompte;
     private javax.swing.JTextField textFieldSupprimerIntefaGererPharmcie;
     private javax.swing.JTextField textFieldTitrereclamtionAdd;
